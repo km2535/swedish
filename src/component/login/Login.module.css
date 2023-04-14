@@ -1,0 +1,134 @@
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: pan-y;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  border: 1px solid #000;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.title{
+  cursor: pointer;
+  height: 30%;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: var(--main-eg-font);
+  font-weight: 600;
+}
+
+
+.loginContent{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.inputs {
+  position: relative;
+  width: 300px;
+  margin-top: 10px;
+}
+.loginInput{
+  font-size: 15px;
+  color: #222222;
+  width: 290px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  position: relative;
+  background: none;
+  z-index: 5;
+}
+
+.loginInput::placeholder { color: #aaaaaa; }
+.loginInput:focus { outline: none; }
+
+.span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0%;  /* right로만 바꿔주면 오 - 왼 */
+  background-color: #666;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.label {
+  position: absolute;
+  color: #aaa;
+  left: 10px;
+  font-size: 20px;
+  bottom: 8px;
+  transition: all .2s;
+}
+
+.loginInput:focus ~ .label,.loginInput:valid ~ .label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
+}
+
+.loginInput:focus ~ .span,.loginInput:valid ~ .span {
+  width: 100%;
+}
+.findCotent{
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 50px;
+}
+.pwFind,.idFind{
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: #656565;
+}
+
+
+
+.description{
+  color: #807E7E;
+  height: 15%;
+  line-height: 70px;
+}
+.loginBtn,.joinBtn{
+  width: 180px;
+  height: 40px;
+}
+.btns{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.warnning{
+  position: relative;
+  font-size: 14px;
+  color: var(--main-font-strong-color);
+  font-family: var(--main-eg-font);
+  font-weight: 600;
+}
+@media screen and (max-width : 768px){
+  .content{
+   width: 90%; 
+  }
+}

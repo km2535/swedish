@@ -1,0 +1,22 @@
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.th{
+  border-bottom: 1px solid var(--line-light-color);
+}
+.btns{
+  width: 20%;
+}
+.btn{
+  width: 120px;
+  margin: 0 auto;
+}
+.userid,.nickname,.phone{
+  width: 20%;
+  font-size: 18px;
+}
+.tr{
+  height: 45px;
+}

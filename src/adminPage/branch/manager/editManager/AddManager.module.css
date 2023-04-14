@@ -1,0 +1,72 @@
+.container{
+  width: 90%;
+}
+.inputFile{
+  display: none;
+}
+.downloadFile{
+  width: 50%;
+  height: 500px;
+}
+.imgbox{
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.imgContent{
+  border: 1px solid #000;
+  width: 300px;
+  height: 500px;
+}
+.img{
+  width: 300px;
+  height: 500px;
+}
+.txt1,.txt2{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.txt2{
+  font-weight: 500;
+  font-size: 18px;
+}
+.content{
+  display: flex;
+  margin-bottom: 30px;
+}
+.mainInfo{
+  width: 50%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.inputInfo input{
+  width: 400px;
+  height: 40px;
+}
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.submitBtn{
+  margin: 30px 5px;
+  width: 200px;
+  height: 45px;
+}
+.line{
+  border-bottom: 1px solid var(--line-light-color);
+  margin-bottom: 50px;
+}

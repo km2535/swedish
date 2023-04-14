@@ -1,0 +1,59 @@
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+.mainTitle{
+  font-size: 30px;
+  font-weight: 600;
+  font-family: var(--main-kr-font);
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--font-gray50-color);
+}
+
+.inputFile{
+  display: none;
+}
+.downloadFile{
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+}
+.imgbox{
+  position: absolute;
+  width: 72%;
+  height: 600px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.imgContent{
+  border: 1px solid #000;
+  width: 100%;
+  height: 600px;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}
+.txt1,.txt2{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.txt2{
+  font-weight: 500;
+  font-size: 18px;
+}
+.content{
+  display: flex;
+  margin-bottom: 30px;
+}

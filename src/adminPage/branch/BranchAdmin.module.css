@@ -1,0 +1,19 @@
+.container{
+  width: 80%;
+  height: 60vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  font-size: 45px;
+  font-family: var(--main-kr-font);
+  font-weight: 500;
+  height: 150px;
+}
+.btn{
+  width: 500px;
+  height: 60px;
+}

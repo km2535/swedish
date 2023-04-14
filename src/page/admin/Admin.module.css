@@ -1,0 +1,30 @@
+.container{
+  min-height: 79.2vh;
+  display: flex;
+}
+.list{
+  width: 20%;
+}
+.contents{
+  width: 80%;
+}
+.ul{
+  height: 300px;
+}
+.li,.subLi{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.subLi{
+  font-size: 18px;
+  height: 30px;
+}
+.li:hover, .subLi:hover{
+  color: var(--main-font-strong-color);
+}
