@@ -1,12 +1,14 @@
 export const user_list = async (
   setNoneApproveList,
   setApproveList,
-  setAdminList
+  setAdminList,
+  setIsLoading
 ) => {
   const formData = new FormData();
   setNoneApproveList([]);
   setApproveList([]);
   setAdminList([]);
+  setIsLoading(true);
   setTimeout(() => {
     fetch(`${process.env.REACT_APP_API_FETCH_URL}/user/userList.php`, {
       method: "POST",
@@ -23,6 +25,7 @@ export const user_list = async (
             setAdminList((prev) => [...prev, user]);
           }
         }
-      });
+      })
+      .then(() => setIsLoading(false));
   }, 500);
 };

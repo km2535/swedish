@@ -9,12 +9,13 @@ export default function Admin() {
   const navigate = useNavigate();
   const [branchList, setBranchList] = useState([]);
   const { state } = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
   // useEffect(() => {
   //   readBranch(setBranchList);
   // }, []);
   useEffect(() => {
-    readBranch(setBranchList);
-    state && readBranch(setBranchList);
+    readBranch(setBranchList, setIsLoading);
+    state && readBranch(setBranchList, setIsLoading);
   }, [state]);
   return (
     <div>
@@ -32,6 +33,7 @@ export default function Admin() {
               지점관리
             </li>
             <ul className={styles.subUl}>
+              {isLoading && <></>}
               {branchList.map((branch) => (
                 <li
                   className={styles.subLi}
@@ -44,7 +46,9 @@ export default function Admin() {
                 </li>
               ))}
             </ul>
-            <li className={styles.li}>공지사항</li>
+            <li className={styles.li} onClick={() => navigate("/admin/notice")}>
+              공지사항
+            </li>
             <li className={styles.li}>프로필매니저</li>
           </ul>
         </div>

@@ -1,5 +1,6 @@
 export const updateBranch = async (board, branchState) => {
-  const { ID, WRITER, TITLE, ADDRESS, MAPIMAGE_URL, THUMB_URL } = board;
+  const { ID, WRITER, TITLE, ADDRESS, MAPIMAGE_URL, THUMB_URL, BRANCH_PHONE } =
+    board;
   const formData = new FormData();
 
   MAPIMAGE_URL === ""
@@ -13,6 +14,7 @@ export const updateBranch = async (board, branchState) => {
   formData.append("WRITER", WRITER);
   formData.append("TITLE", TITLE);
   formData.append("ADDRESS", ADDRESS);
+  formData.append("BRANCH_PHONE", BRANCH_PHONE);
   await fetch(
     `${process.env.REACT_APP_API_FETCH_URL}/branch/updateBranch.php`,
     {

@@ -7,7 +7,14 @@ export default function Branch() {
   // console.log(state);
   return (
     <div>
-      <Navbar option={{ main: false, sub: true }} boardId={state?.ID} />
+      <Navbar
+        option={{ main: false, sub: true }}
+        boardId={state?.ID}
+        boardName={state?.TITLE}
+        boardPhone={state?.BRANCH_PHONE}
+        boardAddress={state?.ADDRESS}
+        boardlocation={state?.MAPIMAGE_URL}
+      />
       <Outlet />
     </div>
   );

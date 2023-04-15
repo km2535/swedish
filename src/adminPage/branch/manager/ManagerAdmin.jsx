@@ -4,13 +4,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../../../component/ui/button/Button";
 import { readManager } from "../../../api/manager/readManager";
 import ManagerCard from "../../../component/manager/ManagerCard";
+import LoadingSpinner from "../../../component/loadingSpinner/LoadingSpinner";
 
 export default function ManagerAdmin() {
   const navigate = useNavigate();
   const { state } = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
   const [managerList, setManagerList] = useState([]);
   useEffect(() => {
-    readManager(state?.ID, setManagerList);
+    readManager(state?.ID, setManagerList, setIsLoading);
   }, [state?.ID]);
   return (
     <div className={styles.container}>
@@ -27,6 +29,7 @@ export default function ManagerAdmin() {
         <div className={styles.manager}>출근부 관리</div>
       </div>
       <div className={styles.content}>
+        {isLoading && <LoadingSpinner />}
         {managerList.map((manager) => (
           <div key={manager.id} className={styles.cardContent}>
             <div className={styles.card}>

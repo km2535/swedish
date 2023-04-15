@@ -1,0 +1,39 @@
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.mainTitle{
+  font-size: 30px;
+  font-weight: 600;
+  font-family: var(--main-kr-font);
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--font-gray50-color);
+}
+
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.submitBtn{
+  margin: 30px 5px;
+  width: 200px;
+  height: 45px;
+}
+.titleInput{
+  display: flex;
+}
+.title{
+  font-size: 20px;
+  font-family: var(--main-kr-font);
+  font-weight: 500;
+  margin-right: 20px;
+}
+.input{
+  font-size: 20px;
+  font-family: var(--main-kr-font);
+  font-weight: 500;
+  border: none;
+  height: 30px;
+  width: 500px;
+}

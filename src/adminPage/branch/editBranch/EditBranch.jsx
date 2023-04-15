@@ -41,6 +41,7 @@ export default function EditBranch({ branchState }) {
         THUMB_URL: branchState.THUMB_URL,
         TITLE: branchState.TITLE,
         ADDRESS: branchState.ADDRESS,
+        BRANCH_PHONE: branchState.BRANCH_PHONE,
       }));
     }
   }, [branchState]);
@@ -143,7 +144,7 @@ export default function EditBranch({ branchState }) {
       alert("지점이 수정되었습니다.");
     }
   };
-
+  // console.log(board);
   return (
     <form onSubmit={boardSubmit} id="formdata" className={styles.form}>
       <div className={styles.container}>
@@ -250,6 +251,20 @@ export default function EditBranch({ branchState }) {
               onChange={changeHandler}
               defaultValue={board?.ADDRESS}
               placeholder="주소를 입력하세요"
+            />
+          </div>
+        </div>
+        <div className={styles.titleContainer}>
+          <div className={styles.downloadTitle}>지점 전화번호</div>
+          <div>
+            <input
+              type={"text"}
+              id="BRANCH_PHONE"
+              className={styles.titleInput}
+              required
+              onChange={changeHandler}
+              defaultValue={board?.BRANCH_PHONE}
+              placeholder="전화번호를 입력하세요"
             />
           </div>
         </div>

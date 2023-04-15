@@ -28,6 +28,12 @@ import BranchDetail from "./adminPage/branch/branchDetail/BranchDetail";
 import ManagerAdmin from "./adminPage/branch/manager/ManagerAdmin";
 import EditManager from "./adminPage/branch/manager/editManager/EditManager";
 import AddManager from "./adminPage/branch/manager/editManager/AddManager";
+import NewNotice from "./adminPage/notice/NewNotice";
+import NoticeDetail from "./component/notice/noticeDetail/NoticeDetail";
+import EditNotice from "./adminPage/notice/EditNotice";
+import NewReview from "./component/review/newReview/NewReview";
+import ReviewDetail from "./component/review/reviewDetail/ReviewDetail";
+import EditReview from "./component/review/newReview/EditReview";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +90,22 @@ const router = createBrowserRouter([
             path: "/admin/editBranch",
             element: <EditBranch />,
           },
+          {
+            path: "/admin/notice",
+            element: <Notice isAdmin={true} />,
+          },
+          {
+            path: "/admin/notice/:id",
+            element: <NoticeDetail isAdmin={true} />,
+          },
+          {
+            path: "/admin/editNotice",
+            element: <EditNotice isAdmin={true} />,
+          },
+          {
+            path: "/admin/newNotice",
+            element: <NewNotice />,
+          },
         ],
       },
       {
@@ -139,8 +161,24 @@ const router = createBrowserRouter([
                 element: <Review />,
               },
               {
+                path: "/swedish/:id/review/newReview",
+                element: <NewReview />,
+              },
+              {
+                path: "/swedish/:id/review/:id",
+                element: <ReviewDetail />,
+              },
+              {
+                path: "/swedish/:id/review/:id/editReview",
+                element: <EditReview />,
+              },
+              {
                 path: "/swedish/:id/notice",
                 element: <Notice />,
+              },
+              {
+                path: "/swedish/:id/notice/:id",
+                element: <NoticeDetail />,
               },
             ],
           },

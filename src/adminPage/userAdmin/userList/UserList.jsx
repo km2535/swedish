@@ -12,12 +12,18 @@ export default function UserList({
   setApproveList,
   setAdminList,
   isBlockUser,
+  setIsLoading,
 }) {
   const approveAdmin = (e) => {
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "true" };
     if (window.confirm("해당 유저를 승인하시겠습니까?")) {
       user_update(newUser).then(() => {
-        user_list(setNoneApproveList, setApproveList, setAdminList);
+        user_list(
+          setNoneApproveList,
+          setApproveList,
+          setAdminList,
+          setIsLoading
+        );
       });
     }
   };
@@ -25,7 +31,12 @@ export default function UserList({
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "false" };
     if (window.confirm("해당 유저를 비승인하시겠습니까?")) {
       user_update(newUser).then(() => {
-        user_list(setNoneApproveList, setApproveList, setAdminList);
+        user_list(
+          setNoneApproveList,
+          setApproveList,
+          setAdminList,
+          setIsLoading
+        );
       });
     }
   };
@@ -33,7 +44,12 @@ export default function UserList({
     const newUser = { userid: e.target.id, approve: "false", isAdmin: "false" };
     if (window.confirm("해당 유저를 비승인하시겠습니까?")) {
       user_update(newUser).then(() => {
-        user_list(setNoneApproveList, setApproveList, setAdminList);
+        user_list(
+          setNoneApproveList,
+          setApproveList,
+          setAdminList,
+          setIsLoading
+        );
       });
     }
   };
@@ -41,7 +57,12 @@ export default function UserList({
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "false" };
     if (window.confirm("해당 유저를 승인하시겠습니까?")) {
       user_update(newUser).then(() => {
-        user_list(setNoneApproveList, setApproveList, setAdminList);
+        user_list(
+          setNoneApproveList,
+          setApproveList,
+          setAdminList,
+          setIsLoading
+        );
       });
     }
   };
@@ -49,7 +70,12 @@ export default function UserList({
     const newUser = { userid: e.target.id };
     if (window.confirm("해당 유저를 삭제하시겠습니까?")) {
       delete_user(newUser).then(() => {
-        user_list(setNoneApproveList, setApproveList, setAdminList);
+        user_list(
+          setNoneApproveList,
+          setApproveList,
+          setAdminList,
+          setIsLoading
+        );
       });
     }
   };
