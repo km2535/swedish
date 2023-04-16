@@ -23,7 +23,7 @@ export default function ManagerCard({ manager, branchId, isAdmin }) {
             src={`${process.env.REACT_APP_API_DATA_URL}/manager/thumb/${manager.id}/${manager.thumb_img}`}
             alt="썸네일"
             onClick={() =>
-              navigate(`/swedish/branchDetail/${branchId}`, {
+              navigate(`/swedish/${branchId}/${manager.id}`, {
                 state: manager,
               })
             }

@@ -43,6 +43,15 @@ code {
 li{
   list-style: none;
 }
+.image{
+  text-align: center;
+}
+img{
+  max-width: 1000px;
+}
+.image-style-side{
+  text-align: right;
+}
 
 #root{
   overflow: hidden;

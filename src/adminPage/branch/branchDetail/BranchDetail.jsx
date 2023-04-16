@@ -19,7 +19,7 @@ export default function BranchDetail() {
             navigate(`/admin/branchDetail/${state.ID}`, { state: state })
           }
         >
-          출근부 관리
+          출근부 / 매니저 관리
         </div>
       </div>
       <div>

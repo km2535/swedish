@@ -124,7 +124,7 @@ export default function AddManager() {
                 <>
                   <span className={styles.txt1}>클릭해서 썸네일 사진 추가</span>
                   <span className={styles.txt2}>
-                    (실제 상품사진은 크게 보입니다.)
+                    (실제 사진은 크게 보입니다.)
                   </span>
                 </>
               )}

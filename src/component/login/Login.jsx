@@ -62,8 +62,12 @@ export default function Login() {
           )}
         </div>
         <div className={styles.findCotent}>
-          <div className={styles.idFind}>아이디 찾기</div>
-          <div className={styles.pwFind}>비밀번호 찾기</div>
+          <div className={styles.idFind} onClick={() => navigate("/idFind")}>
+            아이디 찾기
+          </div>
+          <div className={styles.pwFind} onClick={() => navigate("/pwFind")}>
+            비밀번호 찾기
+          </div>
         </div>
         <div className={styles.btns}>
           <div className={styles.loginBtn}>

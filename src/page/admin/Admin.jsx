@@ -49,7 +49,12 @@ export default function Admin() {
             <li className={styles.li} onClick={() => navigate("/admin/notice")}>
               공지사항
             </li>
-            <li className={styles.li}>프로필매니저</li>
+            {/* <li
+              className={styles.li}
+              onClick={() => navigate("/admin/profileManager")}
+            >
+              프로필매니저
+            </li> */}
           </ul>
         </div>
         <div className={styles.contents}>

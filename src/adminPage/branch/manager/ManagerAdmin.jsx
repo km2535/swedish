@@ -26,10 +26,13 @@ export default function ManagerAdmin() {
         >
           기본정보
         </div>
-        <div className={styles.manager}>출근부 관리</div>
+        <div className={styles.manager}>출근부 / 매니저 관리</div>
       </div>
       <div className={styles.content}>
         {isLoading && <LoadingSpinner />}
+        {managerList.length === 0 && isLoading === false && (
+          <div className={styles.noManager}>매니저가 없습니다.</div>
+        )}
         {managerList.map((manager) => (
           <div key={manager.id} className={styles.cardContent}>
             <div className={styles.card}>

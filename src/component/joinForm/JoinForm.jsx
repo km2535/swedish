@@ -195,7 +195,10 @@ export default function JoinForm() {
             </div>
           </div>
           <div className={styles.description}>
-            * 회원가입 문의 <a href="tel:010-0000-0000">010-0000-0000</a>
+            * 회원가입 문의{" "}
+            <a href={`tel:${process.env.REACT_APP_API_PHONE}`}>
+              {process.env.REACT_APP_API_PHONE}
+            </a>
           </div>
         </div>
       </form>

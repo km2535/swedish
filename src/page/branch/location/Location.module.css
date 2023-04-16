@@ -3,7 +3,8 @@
   margin: 50px auto;
 }
 .map{
-  margin: 50px 0;
+  text-align: center;
+  margin: 50px auto;
   border-top: 1px solid var(--line-light-color);
   border-bottom: 1px solid var(--line-light-color);
 }

@@ -10,7 +10,7 @@
 }
 .imgbox{
   position: absolute;
-  width: 300px;
+  width: 400px;
   height: 500px;
   top: 50px;
   display: flex;
@@ -21,11 +21,11 @@
 }
 .imgContent{
   border: 1px solid #000;
-  width: 300px;
+  width: 400px;
   height: 500px;
 }
 .img{
-  width: 300px;
+  width: 400px;
   height: 500px;
 }
 .txt1,.txt2{

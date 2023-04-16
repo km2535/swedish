@@ -1,13 +1,17 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./AttendanceDetail.module.css";
 import parse from "html-react-parser";
+import Button from "../../../../component/ui/button/Button";
 
 export default function AttendanceDetail() {
   const { state } = useLocation();
+  const navigate = useNavigate();
   return (
     <>
-      <div className={styles.line}></div>
+      <div className={styles.banner}>
+        <div className={styles.bannerTxt}>프로필</div>
+      </div>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.downloadFile}>
@@ -39,10 +43,20 @@ export default function AttendanceDetail() {
             </div>
           </div>
         </div>
-        <div className={styles.worktime}>상세프로필</div>
+        <div className={styles.desc}>상세프로필</div>
         <div className={styles.line}></div>
-
-        <div className={styles.content}>{parse(state.content)}</div>
+        <div className={styles.contentDetail}>{parse(state.content)}</div>
+        <div className={styles.line}></div>
+        <div className={styles.btnContent}>
+          <div className={styles.btn}>
+            <Button
+              text={"뒤로가기"}
+              main={"sub"}
+              type={"button"}
+              onClick={() => navigate(-1)}
+            />
+          </div>
+        </div>
       </div>
     </>
   );

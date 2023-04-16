@@ -7,7 +7,7 @@ export default function Join() {
     <div
       className={styles.imgContainer}
       style={{
-        backgroundImage: `url(${process.env.REACT_APP_API_DATA_URL}/ladingPage/bg1.jpg)`,
+        backgroundImage: `url(${process.env.REACT_APP_API_DATA_URL}/skin/images/bg.jpg)`,
       }}
     >
       <JoinForm />

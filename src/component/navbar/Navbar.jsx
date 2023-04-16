@@ -77,7 +77,7 @@ export default function Navbar({
               <li
                 id="option2"
                 className={styles.option2}
-                onClick={() => navigate("manager")}
+                onClick={() => navigate("manager", { state: id })}
               >
                 매니저프로필
               </li>

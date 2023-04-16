@@ -91,6 +91,15 @@ export default function UserList({
         </tr>
       </thead>
       <tbody>
+        {userList.length === 0 && (
+          <tr>
+            <td colSpan={5}>유저가 없습니다.</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        )}
         {userList.map((user) => (
           <tr key={uuidv4()} className={styles.tr}>
             <td className={styles.userid}>{user?.userid}</td>

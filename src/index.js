@@ -34,6 +34,10 @@ import EditNotice from "./adminPage/notice/EditNotice";
 import NewReview from "./component/review/newReview/NewReview";
 import ReviewDetail from "./component/review/reviewDetail/ReviewDetail";
 import EditReview from "./component/review/newReview/EditReview";
+import ProfileManager from "./adminPage/profileManager/ProfileManager";
+import NewProfile from "./adminPage/profileManager/newProfile/NewProfile";
+import ManagerDetail from "./page/branch/manager/managerDetail/ManagerDetail";
+import UserFind from "./page/user/userFind/UserFind";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +53,14 @@ const router = createBrowserRouter([
       {
         path: "/join",
         element: <Join />,
+      },
+      {
+        path: "/idFind",
+        element: <UserFind />,
+      },
+      {
+        path: "/pwFind",
+        element: <UserFind isPw={true} />,
       },
       {
         path: `/admin`,
@@ -106,6 +118,14 @@ const router = createBrowserRouter([
             path: "/admin/newNotice",
             element: <NewNotice />,
           },
+          {
+            path: "/admin/profileManager",
+            element: <ProfileManager />,
+          },
+          {
+            path: "/admin/newProfile",
+            element: <NewProfile />,
+          },
         ],
       },
       {
@@ -151,6 +171,10 @@ const router = createBrowserRouter([
               {
                 path: "/swedish/:id/manager",
                 element: <Manager />,
+              },
+              {
+                path: "/swedish/:id/manager/:id",
+                element: <ManagerDetail />,
               },
               {
                 path: "/swedish/:id/location",
