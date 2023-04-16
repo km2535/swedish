@@ -4,12 +4,11 @@
 }
 .downloadFile{
   width: 50%;
-  height: 500px;
+  margin-right: 100px;
 }
 .imgbox{
   position: absolute;
   width: 300px;
-  height: 500px;
   top: 50px;
   display: flex;
   flex-direction: column;
@@ -19,13 +18,12 @@
 }
 .imgContent{
   border: 1px solid #000;
-  width: 300px;
-  height: 500px;
+  width: 100%;
+  overflow: hidden;
   margin: 0 auto;
 }
 .img{
-  width: 300px;
-  height: 500px;
+  width: 100%;
 }
 .content{
   display: flex;
@@ -90,4 +88,33 @@
 .btn{
   width: 180px;
   height: 35px;
+}
+
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 85%;
+  }  
+}
+@media screen and (max-width : 967px){
+  .container{
+    width: 90%;
+  }
+}
+@media screen and (max-width : 768px){
+    .container{
+    width: 95%;
+  }
+  .downloadFile{
+    margin-right: 20px;
+  }
+  .mainInfo{
+    height: 200px;
+  }
+  .desc{
+    font-size: 20px;
+  }
 }

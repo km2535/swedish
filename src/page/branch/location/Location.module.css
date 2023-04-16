@@ -18,7 +18,8 @@
   align-items: center;
 }
 .addr1,.addr2{
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 26px;
   font-family: var(--main-kr-font);
 }
 .addr1::after{
@@ -28,9 +29,47 @@
 }
 .mainTitle{
   font-size: 30px;
+  height: 50px;
   font-weight: 600;
   font-family: var(--main-kr-font);
   width: 100%;
   text-align: center;
   background-color: var(--main-color);
+}
+
+@media screen and (max-width : 1500px){
+  .container{
+    width: 1000px;
+  }
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 90%;
+  }
+}
+@media screen and (max-width : 967px){
+  .mainTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+  .address{
+    flex-wrap: wrap;
+  }
+  .addr1{
+    width: 100%;
+    font-size: 24px;
+  }
+  .addr1::after{
+    content: "";
+  }
+  .addr2{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width : 768px){
+  .addr2{
+    font-size: 20px;
+  }
 }

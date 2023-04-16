@@ -40,7 +40,7 @@ export default function ManagerDetail() {
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
           >
-            {imgUrl.map((img) => (
+            {imgUrl?.map((img) => (
               <div className={styles.content} key={uuid()}>
                 <SwiperSlide key={uuid()}>
                   <div className={styles.img}>{parse(img)}</div>

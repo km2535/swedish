@@ -69,17 +69,11 @@ export default function FindForm() {
               <Button
                 text={"돌아가기"}
                 main={true}
-                fontsize={20}
                 onClick={() => navigate("/")}
               />
             </div>
             <div className={styles.joinBtn}>
-              <Button
-                text={"아이디 검색"}
-                main={false}
-                fontsize={20}
-                type={"submit"}
-              />
+              <Button text={"아이디 검색"} main={false} type={"submit"} />
             </div>
           </div>
         </div>

@@ -69,4 +69,51 @@
 .line{
   border-bottom: 1px solid var(--line-light-color);
   margin-bottom: 50px;
+} 
+
+
+@media screen and (max-width:1350px){
+  
+}
+@media screen and (max-width:1280px){
+  .inputInfo input{
+    width: 100%;
+  }
+  .imgContent,.imgbox,.img{
+    width: 350px;
+  }
+}
+@media screen and (max-width:1024px){
+   .imgContent,.imgbox,.img{
+    width: 320px;
+    height: 400px;
+  }
+}
+@media screen and (max-width:967px){
+ .container{
+  margin: 0 auto;
+ }
+ .imgbox{
+  top: 292px;
+ }
+}
+@media screen and (max-width:768px){
+  .content{
+    flex-direction: column;
+  }
+.imgContent,.imgbox,.img{
+    width: 90%;
+    height: 300px;
+  }
+  .downloadFile{
+    width: 100%;
+    height: 300px;
+  }
+  .imgContent{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .mainInfo{
+    width: 100%;
+  }
 }

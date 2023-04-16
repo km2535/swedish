@@ -86,7 +86,7 @@ export default function DesignSkin() {
       </div>
       <div className={styles.btn}>
         <div className={styles.submitBtn}>
-          <Button type={"submit"} text={"수정하기"} />
+          <Button type={"submit"} text={"수정하기"} fontsize={20} />
         </div>
       </div>
     </form>

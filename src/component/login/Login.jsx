@@ -25,7 +25,7 @@ export default function Login() {
     <form className={styles.container} onSubmit={submitHandler}>
       <div className={styles.content}>
         <div className={styles.title} onClick={() => navigate("/")}>
-          LOGIN
+          로그인
         </div>
         <div className={styles.loginContent}>
           <div className={styles.inputs}>
@@ -51,7 +51,7 @@ export default function Login() {
             <span className={styles.span}></span>
           </div>
         </div>
-        <div>
+        <div className={styles.warnning}>
           {warnning && (
             <span className={styles.warnning}>
               아이디 또는 비밀번호를 확인하세요.

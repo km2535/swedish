@@ -9,22 +9,108 @@
   width: 80%;
 }
 .ul{
-  height: 300px;
+  height: 400px;
 }
 .li,.subLi{
-  font-family: 'Noto Sans';
+  font-family:var(--main-kr-font);
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
-  height: 40px;
+  font-size: 24px;
+  height: 60px;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 .subLi{
-  font-size: 18px;
+  font-size: 22px;
   height: 30px;
 }
 .li:hover, .subLi:hover{
   color: var(--main-font-strong-color);
+}
+.arrow{
+  display: none;
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1380px){
+  .container{
+    width: 100%;
+  } 
+  .li,.subLi{
+    font-size: 22px;
+  }
+  .subUl{
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 100%;
+  } 
+  .li,.subLi{
+    width: 100%;
+    font-size: 18px;
+  }
+   .subUl{
+    padding-left: 5px;
+  }
+}
+@media screen and (max-width : 1028px){
+  .ul{
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width : 967px){
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .li,.subLi{
+    width: 100%;
+    font-size: 18px;
+  }
+  .list{
+    width: 100%;
+    height: fit-content;
+  }
+  .ul{
+    height: 200px;
+  }
+  .ul,.subUl{
+    width: 100%;
+    display: flex;
+  }
+  .subUl{
+    position: absolute;
+    top: 150px;
+    flex-wrap: wrap;
+    background-color: var(--main-color);
+    left: 0;
+  }
+  .subLi{
+    width: 33%;
+  }
+  .arrow{
+    display: block;
+    position: absolute;
+    color: var(--main-color);
+    top: 125px;
+    left: 55%;
+    font-size: 30px;
+  }
+  .contents{
+    width: 100%;
+  }
+}
+@media screen and (max-width : 768px){
+   .li,.subLi{
+    font-size: 16px;
+  }
+  .subLi{
+    width: 50%;
+  }
 }

@@ -51,6 +51,7 @@
 .Info{
   touch-action: none;
   font-size: 12px;
+  text-align: center;
 }
 .company{
   touch-action: none;
@@ -84,9 +85,7 @@
   .topInfo,.mainInfo{
     width: 90%;
   }
-  .logo,.img{
-    width: 100px;
-  }
+
   .menu1::after, .menu2::after, .menu3::after{
     content: "|";
     margin: 0 10px 0 10px;
@@ -99,9 +98,6 @@
   .topInfo,.mainInfo{
     width: 95%;
   }
-  .logo,.img{
-    width: 80px;
-  }
   .menu1::after, .menu2::after, .menu3::after{
     content: "|";
     margin: 0 10px 0 10px;
@@ -111,9 +107,6 @@
   }
 }
 @media screen and (max-width:960px){
-  .logo,.img{
-   display: none;
-  }
   .mainInfo{
     flex-direction: column;
   }
@@ -126,11 +119,12 @@
 }
 @media screen and (max-width:768px){
   .container{
-    height: 250px;
+    height: 150px;
     top: 0px;
   }
   .topInfo{
     font-size: 12px;
+    justify-content: center;
   }
   .Info{
     margin-bottom: 5px;

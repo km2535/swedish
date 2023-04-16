@@ -20,14 +20,19 @@ export default function ManagerAdmin() {
         <div className={styles.mainTitle}>지점관리</div>
       </div>
       <div className={styles.optionContainer}>
-        <div
-          className={styles.default}
-          onClick={() => navigate(`/admin/branchDetail`, { state: state })}
-        >
-          기본정보
+        <div className={styles.default}>
+          <Button
+            text={"기본정보"}
+            main={"false"}
+            onClick={() => navigate(`/admin/branchDetail`, { state: state })}
+            type={"button"}
+          />
         </div>
-        <div className={styles.manager}>출근부 / 매니저 관리</div>
+        <div className={styles.manager}>
+          <Button main={"false"} text={"출근부 / 매니저 관리"} />
+        </div>
       </div>
+
       <div className={styles.content}>
         {isLoading && <LoadingSpinner />}
         {managerList.length === 0 && isLoading === false && (

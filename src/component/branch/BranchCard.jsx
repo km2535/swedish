@@ -15,8 +15,8 @@ export default function BranchCard({ branch }) {
           src={`${process.env.REACT_APP_API_DATA_URL}/branch/thumb/${branch.ID}/${branch.THUMB_URL}`}
           alt=""
         />
-        <div className={styles.title}>{branch.TITLE}</div>
       </div>
+      <div className={styles.title}>{branch.TITLE}</div>
     </div>
   );
 }

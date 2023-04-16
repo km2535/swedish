@@ -46,7 +46,7 @@ export default function Navbar({
                   </span>
                 )}
               </div>
-              <div>
+              <div className={styles.manager}>
                 {user && (
                   <span className={styles.txt} onClick={logoutHandler}>
                     로그아웃
@@ -58,7 +58,7 @@ export default function Navbar({
         )}
         {sub && (
           <>
-            <div className={styles.logo}>
+            <div className={styles.subLogo}>
               <div
                 className={styles.logoContainer}
                 onClick={() => navigate("/")}
@@ -114,7 +114,7 @@ export default function Navbar({
                   </span>
                 )}
               </div>
-              <div>
+              <div className={styles.manager}>
                 {user && (
                   <span className={styles.txt} onClick={logoutHandler}>
                     로그아웃
@@ -124,7 +124,7 @@ export default function Navbar({
             </div>
           </>
         )}
-        <div className={sub ? styles.logginDark : styles.loggin}></div>
+        {/* <div className={sub ? styles.logginDark : styles.loggin}></div> */}
       </div>
       {sub && (
         <div className={styles.branchName}>

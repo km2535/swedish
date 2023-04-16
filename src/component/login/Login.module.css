@@ -8,6 +8,7 @@
 }
 .content{
   display: flex;
+  width: 500px;
   flex-direction: column;
   height: 500px;
   border: 1px solid #000;
@@ -18,12 +19,11 @@
 .title{
   cursor: pointer;
   height: 30%;
-  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  font-weight: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
 }
 
@@ -68,6 +68,7 @@
 }
 
 .label {
+  font-family: var(--main-kr-font);
   position: absolute;
   color: #aaa;
   left: 10px;
@@ -94,7 +95,7 @@
   margin-top: 50px;
 }
 .pwFind,.idFind{
-  font-family: 'Noto Sans KR';
+  font-family: var(--main-kr-font);
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -103,10 +104,8 @@
   cursor: pointer;
   color: #656565;
 }
-
-
-
 .description{
+  font-family: var(--main-kr-font);
   color: #807E7E;
   height: 15%;
   line-height: 70px;
@@ -124,11 +123,52 @@
   position: relative;
   font-size: 14px;
   color: var(--main-font-strong-color);
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  
+  
+}
+@media screen and (max-width : 967px){
+  .content{
+    width: 400px;
+    height: 400px;
+  } 
+  .title{
+    font-size: 30px;
+  }
+  .loginContent{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .findCotent{
+    margin-top: 10px;
+
+    align-items: center;
+  }
+  .loginBtn,.joinBtn{
+    width: 150px;
+    height: 30px;
+  }
+  .description{
+    font-size: 14px;
+  }
+  .warnning{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 @media screen and (max-width : 768px){
   .content{
-   width: 90%; 
-  }
+    width: 350px;
+  } 
 }

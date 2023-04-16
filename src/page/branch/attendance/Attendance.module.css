@@ -5,7 +5,13 @@
 .list{
   display: flex;
   flex-wrap: wrap;
+  font-family: var(--main-kr-font);
   /* min-height: 60vh; */
+}
+.noManager{
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
 }
 .cardContent{
   width: 25%;
@@ -19,13 +25,54 @@
   background-color: var(--main-color);
 }
 .day{
-  font-size: 22px;
+  font-size: 28px;
   margin-left: 10px;
   font-family: var(--main-kr-font);
   font-weight: 600;
 }
 .title{
-  font-size: 22px;
+  font-size: 35px;
   font-family: var(--main-kr-font);
+  font-weight: 600;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  .content{
+    width: 1000px;
+  }
+  .title{
+    font-size: 30px;
+  }
+  .noManager{
+    font-size: 20px;
+  }
+  .cardContent{
+    width: 33%;
+  }
+}
+@media screen and (max-width : 967px){
+  .content{
+    width: 90%;
+  }
+  .title{
+    font-size: 24px;
+  }
+  .day{
+      font-size: 24px;
+    }
+  .cardContent{
+    width: 50%;
+  }
+}
+@media screen and (max-width : 768px){
+  .content{
+    width: 98%;
+  }
+  .cardContent{
+    width: 50%;
+  }
 }

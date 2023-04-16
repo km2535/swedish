@@ -113,7 +113,7 @@ export default function UserList({
                     main={"sub"}
                     onClick={approveCancle}
                     id={user?.userid}
-                    fontsize={18}
+                    // fontsize={18}
                   />
                 </div>
               ) : (
@@ -122,7 +122,7 @@ export default function UserList({
                     text={"승인"}
                     onClick={approve}
                     id={user?.userid}
-                    fontsize={18}
+                    // fontsize={18}
                   />
                 </div>
               )}
@@ -135,7 +135,7 @@ export default function UserList({
                     main={"sub"}
                     onClick={approveAdminCancle}
                     id={user?.userid}
-                    fontsize={18}
+                    // fontsize={18}
                   />
                 </div>
               ) : isBlockUser ? (
@@ -144,7 +144,7 @@ export default function UserList({
                     text={"삭제"}
                     main={"sub"}
                     onClick={deleteUser}
-                    fontsize={18}
+                    // fontsize={18}
                     id={user?.userid}
                   />
                 </div>
@@ -152,7 +152,7 @@ export default function UserList({
                 <div className={styles.btn}>
                   <Button
                     text={"지정"}
-                    fontsize={18}
+                    // fontsize={18}
                     onClick={approveAdmin}
                     id={user?.userid}
                   />

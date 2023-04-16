@@ -30,9 +30,39 @@
 .theadTr, .tbodyTr{
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-family: var(--main-kr-font);
 }
 .description{
   text-align: justify;
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 1000px;
+  }
+}
+@media screen and (max-width : 1028px){
+  .container{
+    width: 90%;
+  }
+}
+@media screen and (max-width : 967px){
+  .theadTr, .tbodyTr{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width : 768px){
+  .theadTr, .tbodyTr{
+    font-size: 16px;
+  }
+  .tdDate{
+    font-size: 14px;
+  }
+  .btn{
+    width: 120px;
+  }
 }

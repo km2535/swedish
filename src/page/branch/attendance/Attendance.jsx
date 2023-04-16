@@ -28,7 +28,9 @@ export default function Attendance() {
         <div className={styles.title}>NF매니저</div>
         <div className={styles.list}>
           {isLoading && <LoadingSpinner />}
-          {isLoading || managerList.length > 0 || "매니저가 없습니다."}
+          {isLoading || managerList.length > 0 || (
+            <div className={styles.noManager}>매니저가 없습니다.</div>
+          )}
           {managerList
             .filter((manager) => manager?.nf === "true")
             .map((manager) => (
@@ -44,7 +46,9 @@ export default function Attendance() {
         <div className={styles.title}>매니저프로필</div>
         <div className={styles.list}>
           {isLoading && <LoadingSpinner />}
-          {isLoading || managerList.length > 0 || "매니저가 없습니다."}
+          {isLoading || managerList.length > 0 || (
+            <div className={styles.noManager}>매니저가 없습니다.</div>
+          )}
           {managerList
             .filter((manager) => manager?.nf === "false")
             .map((manager) => (

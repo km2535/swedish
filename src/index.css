@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
 
 html {
   width: 100%;
@@ -53,6 +54,25 @@ img{
   text-align: right;
 }
 
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  img{
+    max-width: 800px;
+  }
+    
+}
+@media screen and (max-width : 967px){
+  img{
+    max-width: 600px;
+  }
+}
+@media screen and (max-width : 768px){
+  img{
+    max-width: 80vw;
+  }
+}
 #root{
   overflow: hidden;
   touch-action: pan-y;
@@ -70,7 +90,7 @@ img{
   --black-font-bg-color : #000;
   --white-font-bg-color : #ffffff;
   --navi-white-color : #2F485855;
-  --main-kr-font : 'Noto Sans KR', sans-serif;
+  --main-kr-font : 'Noto Serif KR', serif;
   --main-eg-font : 'Rubik', sans-serif;
   --sub-eg-font : 'Domine', serif;
   --sideNavbar-bg-graysand:#E5CCAF;

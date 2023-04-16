@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  font-weight: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
 }
 
@@ -71,6 +71,7 @@
   position: absolute;
   color: #aaa;
   left: 10px;
+  font-family: var(--main-kr-font);
   font-size: 20px;
   bottom: 8px;
   transition: all .2s;
@@ -94,6 +95,7 @@
   color: #807E7E;
   height: 15%;
   line-height: 70px;
+  font-family: var(--main-kr-font);
   text-decoration: none;
 }
 .loginBtn,.joinBtn{
@@ -111,7 +113,7 @@
   font-size: 14px;
   top: -20px;
   color: var(--main-font-strong-color);
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
 }
 .warnSide{
@@ -119,12 +121,77 @@
   font-size: 12px;
   top: 0px;
   color: var(--main-font-strong-color);
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
   margin-left: 20px;
 }
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  
+  
+}
+@media screen and (max-width : 967px){
+  .content{
+    width: 400px;
+    height: 700px;
+    justify-content: space-between;
+  } 
+  .title{
+    font-size: 30px;
+  }
+  .loginContent{
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .findCotent{
+    margin-top: 10px;
+    align-items: center;
+  }
+  .inputs{
+    width: 300px;
+  }
+  .loginInput{
+    width: 290px;
+  }
+  .loginBtn,.joinBtn{
+    width: 150px;
+    height: 30px;
+  }
+  .description{
+    font-size: 14px;
+    line-height: 50px;
+    height: 8%;
+  }
+  .warnning{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    top: -10px;
+  }
+  .findIt{
+    font-size: 18px;
+  }
+  .select{
+    width: 200px;
+  }
+  .label{
+    font-size: 18px;
+  }
+  .loginInput:focus ~ .label,.labelFind,.loginInput:valid ~ .label {
+    bottom: 30px;
+  }
+  .btns{
+    margin-top: 10px;
+  }
+}
 @media screen and (max-width : 768px){
   .content{
-   width: 90%; 
-  }
+    width: 350px;
+  } 
 }

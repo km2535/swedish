@@ -202,7 +202,10 @@ export default function EditBranch({ branchState }) {
           </label>
         </div>
         <div className={styles.downloadFile}>
-          <div className={styles.downloadTitle}>오시는 길(이미지)</div>
+          <div className={styles.downloadTitle}>
+            오시는 길<br className={styles.next} />
+            (이미지)
+          </div>
           <input
             className={styles.inputFile}
             type={"file"}
@@ -284,15 +287,15 @@ export default function EditBranch({ branchState }) {
               onClick={() => navigate(-1)}
             />
           </div>
-          <div className={styles.btn}>
-            {branchState && (
+          {branchState && (
+            <div className={styles.btn}>
               <Button
                 text="삭제하기"
                 type={"button"}
                 onClick={deleteBranchHandler}
               />
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </form>

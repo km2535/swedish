@@ -15,14 +15,14 @@
   border: 1px solid transparent;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 210px;
   height: 280px;
-  margin: 0 auto;
+  margin: 10px auto;
+  overflow: hidden;
   cursor: pointer;
 }
 .img{
   width: 100%;
-  height: 95%;
 }
 .describe{
   font-family: var(--main-kr-font);
@@ -36,4 +36,25 @@
   font-family: var(--main-kr-font);
   font-size: 20px;
   font-weight: 600;
+}
+
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+ 
+  
+}
+@media screen and (max-width : 967px){
+  
+}
+@media screen and (max-width : 768px){
+  .container{
+    width: 180px;
+  }
+  .imgContent{
+    width: 150px;
+    height: 200px;
+  }
 }

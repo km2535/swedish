@@ -12,6 +12,7 @@ export default function BranchAdmin() {
       <div className={styles.btn}>
         <Button
           text={"추가하기"}
+          fontsize={24}
           onClick={() => navigate("/admin/editBranch")}
         />
       </div>

@@ -38,3 +38,45 @@
   height: 30px;
   width: 500px;
 }
+
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 1000px;
+  }
+}
+@media screen and (max-width : 1028px){
+  .container{
+    width: 90%;
+  }
+}
+@media screen and (max-width : 967px){
+  .theadTr, .tbodyTr{
+    font-size: 20px;
+  }
+}
+@media screen and (max-width : 768px){
+  .theadTr, .tbodyTr{
+    font-size: 16px;
+  }
+  .tdDate{
+    font-size: 14px;
+  }
+  .title{
+    width: 30%;
+    margin-right: 10px;
+  }
+  .input{
+    width: 60%;
+  }
+  .btn{
+    justify-content: center;
+  }
+  .submitBtn{
+    width: 150px;
+    height: 30px;
+  }
+}

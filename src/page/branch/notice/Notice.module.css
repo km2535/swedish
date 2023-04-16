@@ -4,6 +4,7 @@
 }
 .mainTitle{
   font-size: 30px;
+  height: 50px;
   font-weight: 600;
   font-family: var(--main-kr-font);
   width: 100%;
@@ -26,4 +27,27 @@
 }
 .btn{
   width: 300px;
+}
+
+@media screen and (max-width : 1500px){
+.btnContainer{
+    width: 95%;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width : 1280px){
+
+}
+@media screen and (max-width : 967px){
+  .mainTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+}
+@media screen and (max-width : 768px){
+  .btn{
+    width: 120px;
+  }
 }

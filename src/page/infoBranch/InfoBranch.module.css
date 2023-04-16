@@ -5,7 +5,8 @@
   flex-wrap: wrap;
 }
 .card{
-  width: 25%;
+  width: 50%;
+  padding: 10px 0;
 }
 .intro{
   display: flex;
@@ -15,8 +16,27 @@
   background-color: var(--main-color);
 }
 .title{
-  font-size: 22px;
+  font-size: 28px;
   margin-left: 10px;
   font-family: var(--main-kr-font);
   font-weight: 600;
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  .container{
+    width: 90%;
+  }
+  .card{
+    width: 100%;
+  }
+  
+}
+@media screen and (max-width : 967px){
+  
+}
+@media screen and (max-width : 768px){
+  
 }

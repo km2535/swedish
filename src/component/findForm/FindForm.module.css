@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  font-weight: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
   margin-bottom: 50px;
 }
@@ -68,6 +68,7 @@
 
 .label,.labelFind {
   position: absolute;
+  font-family: var(--main-kr-font);
   color: #aaa;
   left: 10px;
   font-size: 20px;
@@ -104,7 +105,7 @@
   position: relative;
   font-size: 14px;
   color: var(--main-font-strong-color);
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
 }
 .warnSide{
@@ -112,17 +113,69 @@
   font-size: 12px;
   top: 0px;
   color: var(--main-font-strong-color);
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
   font-weight: 600;
   margin-left: 20px;
 }
 .findIt{
   font-size: 20px;
   font-weight: 500;
-  font-family: var(--main-eg-font);
+  font-family: var(--main-kr-font);
+}
+
+@media screen and (max-width : 1500px){
+
+}
+@media screen and (max-width : 1280px){
+  
+  
+}
+@media screen and (max-width : 967px){
+  .content{
+    width: 400px;
+    height: 400px;
+  } 
+  .title{
+    font-size: 30px;
+  }
+  .loginContent{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .findCotent{
+    margin-top: 10px;
+    align-items: center;
+  }
+  .inputs{
+    width: 300px;
+  }
+  .loginInput{
+    width: 290px;
+  }
+  .loginBtn,.joinBtn{
+    width: 150px;
+    height: 30px;
+  }
+  .description{
+    font-size: 14px;
+  }
+  .warnning{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .findIt{
+    font-size: 18px;
+  }
 }
 @media screen and (max-width : 768px){
   .content{
-   width: 90%; 
+    width: 350px;
   }
+    .loginContent{
+    height: 60%;
+  } 
 }
