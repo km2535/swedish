@@ -9,8 +9,7 @@ export default function Personal() {
         <p className={styles.title}>개인정보처리지침</p>
         <p className="ls2 lh6 bs5 ts4">
           <span className="spanphasis">
-            &lt; 인천스웨디시 &gt;('https://www.incheonswedish.com'이하
-            '인천스웨디시')
+            &lt; 인천스웨디시 &gt;('www.인천스웨디시.한국'이하 '인천스웨디시')
           </span>
           은(는) 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를
           보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기
@@ -28,8 +27,7 @@ export default function Personal() {
             <br />
             <br />
             <span className="spanphasis">
-              &lt; 인천스웨디시 &gt;('https://www.incheonswedish.com'이하
-              '인천스웨디시')
+              &lt; 인천스웨디시 &gt;('www.인천스웨디시.한국'이하 '인천스웨디시')
             </span>
             은(는) 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는
             개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며 이용 목적이
@@ -378,17 +376,6 @@ export default function Personal() {
                 <li>
                   <span className="spanphasis">성명 : 별도공지</span>
                 </li>
-                <li>
-                  <span className="spanphasis">직책 :대표</span>
-                </li>
-                <li>
-                  <span className="spanphasis">직급 :대표이사</span>
-                </li>
-                <li>
-                  <span className="spanphasis">
-                    연락처 :010-0000-0000, 000000@gmail.com
-                  </span>
-                </li>
               </ul>
               <p className="sub_p">
                 <span className="spanphasis">
@@ -407,9 +394,6 @@ export default function Personal() {
                 </li>
                 <li>
                   <span className="spanphasis">담당자 : 별도공지</span>
-                </li>
-                <li>
-                  <span className="spanphasis">연락처 : 010-0000-0000</span>
                 </li>
               </ul>
               <p className="sub_p">

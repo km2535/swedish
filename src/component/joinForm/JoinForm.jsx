@@ -7,7 +7,7 @@ import {
   check_phone_pattern,
   check_pw_pattern,
 } from "../../api/inspect/inspect";
-import { chk_user_id } from "../../api/inspect/chkuser";
+import { chk_user_id, chk_user_nickname } from "../../api/inspect/chkuser";
 import { joinUser } from "../../api/user/joinUser";
 
 export default function JoinForm() {
@@ -16,6 +16,7 @@ export default function JoinForm() {
   const [pwchk, setPwchk] = useState("");
   const [idInspect, setIdInspect] = useState(true);
   const [duplication, setDuplication] = useState(true);
+  const [duplinickname, setDuplinickname] = useState(true);
   const [pwInspect, setPwInspect] = useState(true);
   const [pwchkInspect, setPwchkInspect] = useState(true);
   const [phoneInspect, setPhoneInspect] = useState(true);
@@ -26,7 +27,14 @@ export default function JoinForm() {
     if (pw !== pwchk) {
       window.alert("비밀번호를 다시 확인해주세요.");
     } else if (
-      !(idInspect && pwInspect && pwchkInspect && phoneInspect && duplication)
+      !(
+        idInspect &&
+        pwInspect &&
+        pwchkInspect &&
+        phoneInspect &&
+        duplication &&
+        duplinickname
+      )
     ) {
       window.alert("모든 요소를 정확히 입력해주세요.");
     } else {
@@ -56,6 +64,9 @@ export default function JoinForm() {
       case "phone":
         setPhoneInspect(check_phone_pattern(input_value).valueOf());
         break;
+      case "nickname":
+        chk_user_nickname(input_value, setDuplinickname);
+        break;
 
       default:
         break;
@@ -77,7 +88,12 @@ export default function JoinForm() {
                 id="nickname"
                 required
               />
-              <label className={styles.label}>닉네임</label>
+              <label className={styles.label}>
+                닉네임
+                {duplinickname || (
+                  <span className={styles.warnSide}>중복된 닉네임입니다.</span>
+                )}
+              </label>
               <span className={styles.span}></span>
             </div>
             <div className={styles.inputs}>

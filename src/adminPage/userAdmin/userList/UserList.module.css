@@ -58,6 +58,6 @@
     font-size: 12px;
   }
   .btn,.btns{
-    width: 55px;
+    width: auto;
   }
 }

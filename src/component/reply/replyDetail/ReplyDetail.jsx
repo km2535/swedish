@@ -19,7 +19,7 @@ export default function ReplyDetail({
   setTotalCnt,
 }) {
   const { user } = useAuthContext();
-  const { writer, DATE, content, id } = reply;
+  const { writer, DATE, content, id, isAdmin } = reply;
   const [newContent, setNewContent] = useState(content);
   const textarea = useRef();
   const cont = useRef();
@@ -41,7 +41,6 @@ export default function ReplyDetail({
       updateReply(id, boardId, newContent, setReplyList);
     }
   };
-
   const deleteReplyHandler = () => {
     if (window.confirm("댓글을 삭제하시겠습니까?")) {
       deleteReply(id, boardId, setReplyList);
@@ -60,7 +59,12 @@ export default function ReplyDetail({
     <div className={styles.container}>
       <div className={styles.userWrapper}>
         <div className={styles.user}>
-          <div className={styles.writer}>{writer}</div>
+          <div className={styles.writer}>
+            <span className={styles.admin}>
+              {isAdmin === "true" && "[업소]"}
+            </span>
+            {writer}
+          </div>
           <div className={styles.date}>{moment(DATE).fromNow()}</div>
         </div>
         <div className={styles.btns}>
@@ -119,7 +123,7 @@ export default function ReplyDetail({
           />
         )}
         {reReplyList.map((rereply) => (
-          <div className={styles.rereplyContent}>
+          <div className={styles.rereplyContent} key={uuid()}>
             <div className={styles.arrow}>
               <MdSubdirectoryArrowRight />
             </div>

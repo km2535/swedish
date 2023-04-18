@@ -7,12 +7,13 @@ export const uploadReply = async (
   setTotalCnt,
   setMoreBtn
 ) => {
-  const { id, content, boardId, writer } = reply;
+  const { id, content, boardId, writer, isAdmin } = reply;
   const formData = new FormData();
   formData.append("id", id);
   formData.append("boardId", boardId);
   formData.append("content", content);
   formData.append("writer", writer);
+  formData.append("isAdmin", isAdmin);
 
   await fetch(`${process.env.REACT_APP_API_FETCH_URL}/reply/uploadReply.php`, {
     method: "POST",
@@ -27,13 +28,13 @@ export const uploadReply = async (
     });
 };
 export const uploadReReply = async (content, setReReplyList) => {
-  const { id, subcontent, replyId, writer } = content;
+  const { id, subcontent, replyId, writer, isAdmin } = content;
   const formData = new FormData();
   formData.append("id", id);
   formData.append("replyId", replyId);
   formData.append("subcontent", subcontent);
   formData.append("writer", writer);
-  console.log(content);
+  formData.append("isAdmin", isAdmin);
   await fetch(
     `${process.env.REACT_APP_API_FETCH_URL}/reply/uploadReReply.php`,
     {

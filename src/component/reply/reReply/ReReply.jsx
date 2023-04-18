@@ -10,7 +10,8 @@ export default function ReReply({ setReReply, replyId, setReReplyList }) {
   const { user } = useAuthContext();
   const [content, setContent] = useState({
     replyId: replyId,
-    writer: user.userid,
+    writer: user.nickname,
+    isAdmin: user.isAdmin,
     id: uuid(),
   });
   const textarea = useRef();

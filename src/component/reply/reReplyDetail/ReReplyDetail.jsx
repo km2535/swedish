@@ -9,7 +9,7 @@ import { deleteReReply } from "../../../api/reply/deleteReply";
 import { updateReReply } from "../../../api/reply/updateReply";
 
 export default function ReReplyDetail({ rereply, replyId, setReReplyList }) {
-  const { writer, date, subcontent, id } = rereply;
+  const { writer, date, subcontent, id, isAdmin } = rereply;
   const { user } = useAuthContext();
   const [height, setHeight] = useState(0);
   const textarea = useRef();
@@ -44,7 +44,12 @@ export default function ReReplyDetail({ rereply, replyId, setReReplyList }) {
     <div className={styles.container}>
       <div className={styles.userWrapper}>
         <div className={styles.user}>
-          <div className={styles.writer}>{writer}</div>
+          <div className={styles.writer}>
+            <span className={styles.admin}>
+              {isAdmin === "true" && "[업소]"}
+            </span>
+            {writer}
+          </div>
           <div className={styles.date}>{moment(date).fromNow()}</div>
         </div>
         <div className={styles.btns}>

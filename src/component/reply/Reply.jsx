@@ -17,8 +17,13 @@ export default function Reply({
   const { user } = useAuthContext();
 
   useEffect(() => {
-    setContent({ boardId: boardId, id: uuid(), writer: user.userid });
-  }, [boardId, user.userid]);
+    setContent({
+      boardId: boardId,
+      id: uuid(),
+      writer: user.nickname,
+      isAdmin: user.isAdmin,
+    });
+  }, [boardId, user.isAdmin, user.nickname]);
 
   const cancleHandler = () => {
     const text = window.document.getElementById("content");
