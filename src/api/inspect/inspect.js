@@ -7,6 +7,6 @@ export const check_id_pattern = (asValue) => {
   return regExp.test(asValue);
 };
 export const check_phone_pattern = (asValue) => {
-  var regExp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+  var regExp = /^01(?:0|1|[6-9])-?(?:\d{3}|\d{4})-?\d{4}$/;
   return regExp.test(asValue);
 };

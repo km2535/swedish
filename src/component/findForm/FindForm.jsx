@@ -45,9 +45,7 @@ export default function FindForm() {
                 id="phone"
                 required
               />
-              <label className={styles.label}>
-                휴대전화<span>(-)포함</span>
-              </label>
+              <label className={styles.label}>휴대전화</label>
               <span className={styles.span}></span>
             </div>
             <div className={styles.findIt}>

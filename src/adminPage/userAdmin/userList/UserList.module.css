@@ -16,11 +16,16 @@
   margin: 0 auto;
 }
 .userid,.nickname,.phone{
-  width: 20%;
+  width: auto;
   font-size: 20px;
 }
 .tr{
   height: 45px;
+}
+.admin{
+  margin-right: 5px;
+  color: var(--main-strong-color);
+  font-weight: 600;
 }
 
 @media screen and (max-width:1350px){
@@ -45,9 +50,14 @@
     font-size: 14px;
   }
   .userid,.nickname,.phone{
-    font-size: 14px;
+     font-size: 14px;
+     width: auto;
   }
-  .btn{
-    width: auto;
+  .admin{
+    margin-right: 2px;
+    font-size: 12px;
+  }
+  .btn,.btns{
+    width: 55px;
   }
 }

@@ -165,9 +165,7 @@ export default function JoinForm() {
                 id="phone"
                 required
               />
-              <label className={styles.label}>
-                휴대전화<span>(-)포함</span>
-              </label>
+              <label className={styles.label}>휴대전화</label>
               <span className={styles.span}></span>
             </div>
             {phoneInspect || (
@@ -176,6 +174,9 @@ export default function JoinForm() {
               </span>
             )}
           </div>
+          <span className={styles.warnning}>
+            업소이력 없으면 가입불가입니다.
+          </span>
           <div className={styles.btns}>
             <div className={styles.loginBtn}>
               <Button
@@ -194,12 +195,12 @@ export default function JoinForm() {
               />
             </div>
           </div>
-          <div className={styles.description}>
+          {/* <div className={styles.description}>
             * 회원가입 문의{" "}
             <a href={`tel:${process.env.REACT_APP_API_PHONE}`}>
               {process.env.REACT_APP_API_PHONE}
             </a>
-          </div>
+          </div> */}
         </div>
       </form>
     </div>

@@ -7,6 +7,7 @@ import { delete_user } from "../../../api/user/deleteUser";
 import styles from "./UserList.module.css";
 
 export default function UserList({
+  isAdmin,
   userList,
   setNoneApproveList,
   setApproveList,
@@ -16,7 +17,7 @@ export default function UserList({
 }) {
   const approveAdmin = (e) => {
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "true" };
-    if (window.confirm("해당 유저를 승인하시겠습니까?")) {
+    if (window.confirm("해당 유저를 관리자로 승인하시겠습니까?")) {
       user_update(newUser).then(() => {
         user_list(
           setNoneApproveList,
@@ -29,7 +30,7 @@ export default function UserList({
   };
   const approveAdminCancle = (e) => {
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "false" };
-    if (window.confirm("해당 유저를 비승인하시겠습니까?")) {
+    if (window.confirm("해당 유저의 관리권한을 취소하시겠습니까?")) {
       user_update(newUser).then(() => {
         user_list(
           setNoneApproveList,
@@ -102,7 +103,10 @@ export default function UserList({
         )}
         {userList.map((user) => (
           <tr key={uuidv4()} className={styles.tr}>
-            <td className={styles.userid}>{user?.userid}</td>
+            <td className={styles.userid}>
+              <span className={styles.admin}>{isAdmin && "[업소]"}</span>
+              {user?.userid}
+            </td>
             <td className={styles.nickname}>{user?.nickname}</td>
             <td className={styles.phone}>{user?.phone}</td>
             <td className={styles.btns}>

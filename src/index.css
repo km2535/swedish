@@ -116,6 +116,7 @@ img{
   --btn-hover-pink-color: #f1acac;
   --line-light-color : #D0CFCF;
   --main-color : #FCBABA;
+  --main-strong-color : #f78080;
 }
 @media screen and (max-width:768px){
  #root{

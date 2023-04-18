@@ -36,6 +36,31 @@
 .description{
   text-align: justify;
 }
+.moreBtnWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.moreBtn{
+  background-color: var(--main-strong-color);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: var(--main-kr-font);
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.moreBtn:hover{
+  background-color: #fff;
+  border:2px solid var(--main-strong-color);
+  color: var(--main-color);
+}
 
 @media screen and (max-width : 1500px){
 
