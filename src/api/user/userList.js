@@ -29,3 +29,52 @@ export const user_list = async (
       .then(() => setIsLoading(false));
   }, 500);
 };
+
+//승인된 유저만 불러오기
+export const approveUserList = async (
+  startPage,
+  endPage,
+  setUserList,
+  setIsLoading
+) => {
+  setIsLoading(true);
+  const formData = new FormData();
+  formData.append("startPage", startPage);
+  formData.append("endPage", endPage);
+  setTimeout(() => {
+    fetch(`${process.env.REACT_APP_API_FETCH_URL}/user/approveUserList.php`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((data) => data.json())
+      .then((userList) => {
+        setUserList(userList);
+      })
+      .then(() => setIsLoading(false));
+  }, 500);
+};
+export const noneApproveUserList = async (
+  startPage,
+  endPage,
+  setUserList,
+  setIsLoading
+) => {
+  setIsLoading(true);
+  const formData = new FormData();
+  formData.append("startPage", startPage);
+  formData.append("endPage", endPage);
+  setTimeout(() => {
+    fetch(
+      `${process.env.REACT_APP_API_FETCH_URL}/user/noneApproveUserList.php`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((data) => data.json())
+      .then((userList) => {
+        setUserList(userList);
+      })
+      .then(() => setIsLoading(false));
+  }, 500);
+};

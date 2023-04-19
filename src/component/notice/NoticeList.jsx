@@ -16,6 +16,7 @@ export default function NoticeList({ isAdmin }) {
   }, []);
 
   const handlePageClick = (e) => {
+    console.log(e.selected);
     setCurrentPage(e.selected + 1);
   };
   return (
