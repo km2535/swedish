@@ -18,11 +18,13 @@ export default function AddManager() {
   const [board, setBoard] = useState({
     id: uuid(),
     nf: false,
+    isWork: "false",
     boardId: state?.ID,
     content: "",
     title: "",
     describe: "",
     worktime: "",
+    comment: "",
   });
   const customUploadAdapter = (loader) => {
     return {
@@ -158,6 +160,16 @@ export default function AddManager() {
               type="text"
               name=""
               id="worktime"
+              onChange={onChangeHandler}
+              required
+            />
+          </div>
+          <div className={styles.commentWrap}>
+            <textarea
+              className={styles.comment}
+              placeholder="코멘트"
+              type="text"
+              id="comment"
               onChange={onChangeHandler}
               required
             />

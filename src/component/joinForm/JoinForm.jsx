@@ -193,6 +193,9 @@ export default function JoinForm() {
           <span className={styles.warnning}>
             업소이력 없으면 가입불가입니다.
           </span>
+          <span className={styles.warnning}>
+            닉네임 변경은 불가하오니 신중히 작성해주세요.
+          </span>
           <div className={styles.btns}>
             <div className={styles.loginBtn}>
               <Button

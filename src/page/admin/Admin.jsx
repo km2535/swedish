@@ -24,7 +24,13 @@ export default function Admin() {
         <div className={styles.list}>
           <ul className={styles.ul}>
             <li className={styles.li} onClick={() => navigate("/admin")}>
-              유저관리
+              관리자
+            </li>
+            <li
+              className={styles.li}
+              onClick={() => navigate("/admin/userList")}
+            >
+              신규가입
             </li>
             <li className={styles.li} onClick={() => navigate("/admin/design")}>
               스킨변경
@@ -52,6 +58,22 @@ export default function Admin() {
             <div className={styles.arrow}>
               <BsFillTriangleFill />
             </div>
+          </ul>
+        </div>
+        <div className={styles.mbUl}>
+          <ul className={styles.mbsubUl}>
+            {isLoading && <></>}
+            {branchList.map((branch) => (
+              <li
+                className={styles.subLi}
+                key={branch?.ID}
+                onClick={() =>
+                  navigate("/admin/branchDetail", { state: branch })
+                }
+              >
+                {branch?.TITLE}
+              </li>
+            ))}
           </ul>
         </div>
         <div className={styles.contents}>

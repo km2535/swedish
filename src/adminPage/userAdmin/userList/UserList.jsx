@@ -15,6 +15,8 @@ export default function UserList({
   isBlockUser,
   setIsLoading,
 }) {
+  //관리자 만 불러오는 로직으로 변경,
+  // 승인, 미승인 유저는 이동
   const approveAdmin = (e) => {
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "true" };
     if (window.confirm("해당 유저를 관리자로 승인하시겠습니까?")) {
@@ -94,7 +96,9 @@ export default function UserList({
       <tbody>
         {userList.length === 0 && (
           <tr>
-            <td colSpan={5}>유저가 없습니다.</td>
+            <td colSpan={5} className={styles.noUser}>
+              유저가 없습니다.
+            </td>
             <td></td>
             <td></td>
             <td></td>
@@ -108,7 +112,9 @@ export default function UserList({
               {user?.userid}
             </td>
             <td className={styles.nickname}>{user?.nickname}</td>
-            <td className={styles.phone}>{user?.phone}</td>
+            <td className={styles.phone}>
+              <a href={`tel:${user?.phone}`}>{user?.phone}</a>
+            </td>
             <td className={styles.btns}>
               {user?.approve === "true" ? (
                 <div className={styles.btn}>

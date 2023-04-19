@@ -27,6 +27,9 @@
   color: var(--main-strong-color);
   font-weight: 600;
 }
+.noUser{
+  text-align: center;
+}
 
 @media screen and (max-width:1350px){
   
@@ -54,8 +57,12 @@
      width: auto;
   }
   .admin{
+    word-break: break-all;
     margin-right: 2px;
     font-size: 12px;
+  }
+  .th{
+    word-break: keep-all;
   }
   .btn,.btns{
     width: auto;

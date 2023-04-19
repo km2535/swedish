@@ -51,9 +51,6 @@ export default function ManagerAdmin() {
         ))}
       </div>
       <div className={styles.btnContainer}>
-        {/* <div className={styles.saveBtn}>
-          <Button text={"저장하기"} />
-        </div> */}
         <div className={styles.addBtn}>
           <Button
             text={"매니저 추가하기"}

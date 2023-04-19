@@ -17,7 +17,7 @@ export default function UserAdmin() {
   }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.mainTitle}>신규가입 유저관리</div>
+      <div className={styles.mainTitle}>관리자</div>
       <div className={styles.table}>
         <div className={styles.title}>관리자 목록</div>
         <div className={styles.content}>

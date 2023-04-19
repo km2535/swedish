@@ -33,13 +33,18 @@ export default function AttendanceDetail() {
               <div className={styles.line}></div>
             </div>
             <div>
-              <div className={styles.nf}>{state.nf === "true" ? "NF" : ""}</div>
+              <div className={state.nf === "true" ? styles.nf : styles.nonenf}>
+                NF
+              </div>
             </div>
             <div className={styles.describe}>
               <div className={styles.subInfo}>{state.describe}</div>
             </div>
             <div className={styles.inputInfo}>
               <div className={styles.worktime}>{state.worktime}</div>
+            </div>
+            <div className={styles.commentWrap}>
+              <div className={styles.comment}>{state.comment}</div>
             </div>
           </div>
         </div>

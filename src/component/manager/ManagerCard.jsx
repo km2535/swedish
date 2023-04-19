@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./ManagerCard.module.css";
 import { useNavigate } from "react-router-dom";
+import CheckIsWork from "./CheckIsWork";
 export default function ManagerCard({ manager, branchId, isAdmin }) {
   const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.imgContent}>
@@ -33,6 +35,7 @@ export default function ManagerCard({ manager, branchId, isAdmin }) {
       <div className={styles.title}>{manager.title}</div>
       <div className={styles.describe}>{manager.describe}</div>
       <div className={styles.worktime}>{manager.worktime}</div>
+      {isAdmin && <CheckIsWork manager={manager} />}
     </div>
   );
 }

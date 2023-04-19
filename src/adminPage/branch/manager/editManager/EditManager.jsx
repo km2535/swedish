@@ -30,6 +30,8 @@ export default function EditManager() {
     nf: state?.nf,
     boardId: state?.boardId,
     thumb_img: state?.thumb_img,
+    isWork: state?.isWork,
+    comment: state?.comment,
     content: state?.content,
     title: state?.title,
     describe: state?.describe,
@@ -65,6 +67,9 @@ export default function EditManager() {
         setBoard((prev) => ({ ...prev, [id]: e.target.value }));
         break;
       case "worktime":
+        setBoard((prev) => ({ ...prev, [id]: e.target.value }));
+        break;
+      case "comment":
         setBoard((prev) => ({ ...prev, [id]: e.target.value }));
         break;
       default:
@@ -147,7 +152,7 @@ export default function EditManager() {
                 <>
                   <span className={styles.txt}>클릭해서 썸네일 사진 추가</span>
                   <span className={styles.txt}>
-                    (실제 상품사진은 크게 보입니다.)
+                    (실제 사진은 크게 보입니다.)
                   </span>
                 </>
               )}
@@ -188,11 +193,22 @@ export default function EditManager() {
               required
             />
           </div>
+          <div className={styles.commentWrap}>
+            <textarea
+              className={styles.comment}
+              placeholder="코멘트"
+              type="text"
+              defaultValue={state?.comment}
+              id="comment"
+              onChange={onChangeHandler}
+              required
+            />
+          </div>
           <div>
             <input
               type="checkbox"
               id="nf"
-              defaultChecked={state?.nf}
+              defaultChecked={state?.nf === "true"}
               onChange={onChangeHandler}
             />
             <label htmlFor="nf">NF</label>

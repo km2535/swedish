@@ -244,7 +244,7 @@ export default function EditBranch({ branchState }) {
           </label>
         </div>
         <div className={styles.titleContainer}>
-          <div className={styles.downloadTitle}>지점명</div>
+          <div className={styles.downloadTitle}>주소</div>
           <div>
             <input
               type={"text"}

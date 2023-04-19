@@ -128,7 +128,10 @@ export default function Navbar({
       </div>
       {sub && (
         <div className={styles.branchName}>
-          {branchName} ({branchPhone})
+          {branchName}{" "}
+          <a className={styles.phoneContact} href={`tel:${branchPhone}`}>
+            ({branchPhone})
+          </a>
         </div>
       )}
     </>

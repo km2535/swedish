@@ -31,7 +31,9 @@
 .arrow{
   display: none;
 }
-
+.mbsubUl{
+  display: none;
+}
 @media screen and (max-width : 1500px){
 
 }
@@ -78,18 +80,29 @@
     height: fit-content;
   }
   .ul{
-    height: 200px;
+    height: auto;
   }
   .ul,.subUl{
     width: 100%;
     display: flex;
   }
   .subUl{
-    position: absolute;
+    /* position: absolute;
     top: 150px;
     flex-wrap: wrap;
     background-color: var(--main-color);
-    left: 0;
+    left: 0; */
+    display: none;
+  }
+  .mbUl{
+    width: 100vw;
+  }
+  .mbsubUl{
+    width: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--main-color);
   }
   .subLi{
     width: 33%;

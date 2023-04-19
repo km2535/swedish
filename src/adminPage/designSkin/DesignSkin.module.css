@@ -58,6 +58,9 @@
   display: flex;
   margin-bottom: 30px;
 }
+.submitBtn{
+  width: 100%;
+}
 
 @media screen and (max-width:1350px){
   

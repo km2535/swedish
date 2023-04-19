@@ -32,7 +32,9 @@ export default function Attendance() {
             <div className={styles.noManager}>매니저가 없습니다.</div>
           )}
           {managerList
-            .filter((manager) => manager?.nf === "true")
+            .filter(
+              (manager) => manager?.nf === "true" && manager?.isWork === "true"
+            )
             .map((manager) => (
               <div key={manager.id} className={styles.cardContent}>
                 <div className={styles.card}>
@@ -50,7 +52,9 @@ export default function Attendance() {
             <div className={styles.noManager}>매니저가 없습니다.</div>
           )}
           {managerList
-            .filter((manager) => manager?.nf === "false")
+            .filter(
+              (manager) => manager?.nf === "false" && manager?.isWork === "true"
+            )
             .map((manager) => (
               <div key={manager.id} className={styles.cardContent}>
                 <div className={styles.card}>

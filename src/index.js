@@ -34,10 +34,10 @@ import EditNotice from "./adminPage/notice/EditNotice";
 import NewReview from "./component/review/newReview/NewReview";
 import ReviewDetail from "./component/review/reviewDetail/ReviewDetail";
 import EditReview from "./component/review/newReview/EditReview";
-import ProfileManager from "./adminPage/profileManager/ProfileManager";
-import NewProfile from "./adminPage/profileManager/newProfile/NewProfile";
 import ManagerDetail from "./page/branch/manager/managerDetail/ManagerDetail";
 import UserFind from "./page/user/userFind/UserFind";
+import Approveuser from "./adminPage/userAdmin/approveUser/Approveuser";
+import NoneApproveuser from "./adminPage/userAdmin/noneApproveuser/NoneApproveuser";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +73,14 @@ const router = createBrowserRouter([
           {
             path: "/admin",
             element: <UserAdmin />,
+          },
+          {
+            path: "/admin/userList",
+            element: <Approveuser />,
+          },
+          {
+            path: "/admin/noneApprove",
+            element: <NoneApproveuser />,
           },
           {
             path: "/admin/design",
@@ -117,14 +125,6 @@ const router = createBrowserRouter([
           {
             path: "/admin/newNotice",
             element: <NewNotice />,
-          },
-          {
-            path: "/admin/profileManager",
-            element: <ProfileManager />,
-          },
-          {
-            path: "/admin/newProfile",
-            element: <NewProfile />,
           },
         ],
       },

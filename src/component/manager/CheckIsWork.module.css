@@ -1,0 +1,16 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.title{
+  font-family: var(--main-kr-font);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+@media screen and (max-width : 768px){
+  .title{
+    font-size: 14px;
+  }
+}

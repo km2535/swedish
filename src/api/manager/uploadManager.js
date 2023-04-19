@@ -1,6 +1,16 @@
 export const uploadManager = async (board) => {
-  const { id, boardId, content, nf, title, thumb_img, describe, worktime } =
-    board;
+  const {
+    id,
+    boardId,
+    content,
+    nf,
+    title,
+    thumb_img,
+    describe,
+    worktime,
+    isWork,
+    comment,
+  } = board;
   const formData = new FormData();
   formData.append("id", id);
   formData.append("boardId", boardId);
@@ -10,6 +20,8 @@ export const uploadManager = async (board) => {
   formData.append("thumb_img", thumb_img);
   formData.append("describe", describe);
   formData.append("worktime", worktime);
+  formData.append("isWork", isWork);
+  formData.append("comment", comment);
   await fetch(
     `${process.env.REACT_APP_API_FETCH_URL}/manager/uploadManager.php`,
     {
