@@ -5,9 +5,10 @@ export const readApproveUserCnt = async (setTotalCnt) => {
     .then((data) => data.text())
     .then((res) => setTotalCnt(res));
 };
+
 export const noneReadApproveUserCnt = async (setTotalCnt) => {
   fetch(
-    `${process.env.REACT_APP_API_FETCH_URL}/user/noneReadApproveUserCnt.php`,
+    `${process.env.REACT_APP_API_FETCH_URL}/user/noneApproveUserListCnt.php`,
     {
       method: "POST",
     }

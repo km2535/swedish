@@ -7,18 +7,22 @@ import LoadingSpinner from "../../../component/loadingSpinner/LoadingSpinner";
 import UserLists from "../userLists/UserLists";
 import { readApproveUserCnt } from "../../../api/user/readUserCnt";
 import ReactPaginate from "react-paginate";
+import SearchUser from "../searchUser/SearchUser";
+import SearchList from "../searchList/SearchList";
 
 export default function Approveuser() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [userList, setUserList] = useState([]);
+  const [userSearchList, setUserSearchList] = useState([]);
+  const [searchTotalCnt, setSearchTotalCnt] = useState(0);
   const [totalCnt, setTotalCnt] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [searchBtn, setSearchBtn] = useState(false);
   //승인 유저 로직
   useEffect(() => {
     readApproveUserCnt(setTotalCnt);
-  }, []);
+  }, [userList]);
   useEffect(() => {
     const startPage = (currentPage - 1) * 10;
     const endPage = 10;
@@ -50,28 +54,47 @@ export default function Approveuser() {
           <LoadingSpinner />
         ) : (
           <>
-            <UserLists
-              currentPage={currentPage}
-              userList={userList}
-              setUserList={setUserList}
-              approveUserList={approveUserList}
-              setIsLoading={setIsLoading}
-            />
+            {searchBtn ? (
+              <SearchList
+                searchTotalCnt={searchTotalCnt}
+                userSearchList={userSearchList}
+                setUserList={setUserList}
+                setIsLoading={setIsLoading}
+                setSearchBtn={setSearchBtn}
+              />
+            ) : (
+              <UserLists
+                currentPage={currentPage}
+                userList={userList}
+                setUserList={setUserList}
+                setIsLoading={setIsLoading}
+              />
+            )}
           </>
         )}
-        <ReactPaginate
-          breakLabel={""}
-          previousLabel={"<"}
-          nextLabel={">"}
-          onPageChange={handlePageClick}
-          pageCount={Math.ceil(totalCnt / 10)}
-          pageRangeDisplayed={10}
-          marginPagesDisplayed={10}
-          containerClassName={styles.pagination}
-          activeClassName={styles.current}
-          pageClassName={styles.item}
-          previousClassName={styles.prev}
-          nextClassName={styles.next}
+
+        {searchBtn || (
+          <ReactPaginate
+            breakLabel={""}
+            previousLabel={"<"}
+            nextLabel={">"}
+            onPageChange={handlePageClick}
+            pageCount={Math.ceil(totalCnt / 10)}
+            pageRangeDisplayed={10}
+            marginPagesDisplayed={10}
+            containerClassName={styles.pagination}
+            activeClassName={styles.current}
+            pageClassName={styles.item}
+            previousClassName={styles.prev}
+            nextClassName={styles.next}
+          />
+        )}
+        <SearchUser
+          setUserSearchList={setUserSearchList}
+          approve={"true"}
+          setIsLoading={setIsLoading}
+          setSearchTotalCnt={setSearchTotalCnt}
+          setSearchBtn={setSearchBtn}
         />
       </div>
     </div>
