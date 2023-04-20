@@ -1,144 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Button from "../../../component/ui/button/Button";
 import { user_update } from "../../../api/user/updateUser";
 import { user_list } from "../../../api/user/userList";
-import { delete_user } from "../../../api/user/deleteUser";
 import styles from "./UserList.module.css";
+import ReactPaginate from "react-paginate";
 
 export default function UserList({
   isAdmin,
-  userList,
-  setNoneApproveList,
-  setApproveList,
+  adminList,
   setAdminList,
-  isBlockUser,
   setIsLoading,
+  setTotalCnt,
+  totalCnt,
 }) {
-  //관리자 만 불러오는 로직으로 변경,
-  // 승인, 미승인 유저는 이동
-  const approveAdmin = (e) => {
-    const newUser = { userid: e.target.id, approve: "true", isAdmin: "true" };
-    if (window.confirm("해당 유저를 관리자로 승인하시겠습니까?")) {
-      user_update(newUser).then(() => {
-        user_list(
-          setNoneApproveList,
-          setApproveList,
-          setAdminList,
-          setIsLoading
-        );
-      });
-    }
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentList, setCurrentList] = useState(adminList);
+  useEffect(() => {
+    const startPage = (currentPage - 1) * 10;
+    const endPage = currentPage * 10;
+    setCurrentList(() =>
+      adminList?.filter((ele, index) => index >= startPage && index < endPage)
+    );
+  }, [adminList, currentPage]);
+
+  const handlePageClick = (e) => {
+    setCurrentPage(e.selected + 1);
   };
   const approveAdminCancle = (e) => {
     const newUser = { userid: e.target.id, approve: "true", isAdmin: "false" };
     if (window.confirm("해당 유저의 관리권한을 취소하시겠습니까?")) {
       user_update(newUser).then(() => {
-        user_list(
-          setNoneApproveList,
-          setApproveList,
-          setAdminList,
-          setIsLoading
-        );
-      });
-    }
-  };
-  const approveCancle = (e) => {
-    const newUser = { userid: e.target.id, approve: "false", isAdmin: "false" };
-    if (window.confirm("해당 유저를 비승인하시겠습니까?")) {
-      user_update(newUser).then(() => {
-        user_list(
-          setNoneApproveList,
-          setApproveList,
-          setAdminList,
-          setIsLoading
-        );
-      });
-    }
-  };
-  const approve = (e) => {
-    const newUser = { userid: e.target.id, approve: "true", isAdmin: "false" };
-    if (window.confirm("해당 유저를 승인하시겠습니까?")) {
-      user_update(newUser).then(() => {
-        user_list(
-          setNoneApproveList,
-          setApproveList,
-          setAdminList,
-          setIsLoading
-        );
-      });
-    }
-  };
-  const deleteUser = (e) => {
-    const newUser = { userid: e.target.id };
-    if (window.confirm("해당 유저를 삭제하시겠습니까?")) {
-      delete_user(newUser).then(() => {
-        user_list(
-          setNoneApproveList,
-          setApproveList,
-          setAdminList,
-          setIsLoading
-        );
+        user_list(setAdminList, setIsLoading, setTotalCnt);
       });
     }
   };
   return (
-    <table className={styles.table}>
-      <thead className={styles.thead}>
-        <tr className={styles.header}>
-          <th className={styles.th}>유저아이디</th>
-          <th className={styles.th}>닉네임</th>
-          <th className={styles.th}>전화번호</th>
-          <th className={styles.th}>접근승인</th>
-          <th className={styles.th}>{isBlockUser ? "유저삭제" : "관리자"}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {userList.length === 0 && (
-          <tr>
-            <td colSpan={5} className={styles.noUser}>
-              유저가 없습니다.
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+    <>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
+          <tr className={styles.header}>
+            <th className={styles.th}>유저아이디</th>
+            <th className={styles.th}>닉네임</th>
+            <th className={styles.th}>전화번호</th>
+            <th className={styles.th}>관리자권한</th>
           </tr>
-        )}
-        {userList.map((user) => (
-          <tr key={uuidv4()} className={styles.tr}>
-            <td className={styles.userid}>
-              <span className={styles.admin}>{isAdmin && "[업소]"}</span>
-              {user?.userid}
-            </td>
-            <td className={styles.nickname}>{user?.nickname}</td>
-            <td className={styles.phone}>
-              <a href={`tel:${user?.phone}`}>{user?.phone}</a>
-            </td>
-            <td className={styles.btns}>
-              {user?.approve === "true" ? (
-                <div className={styles.btn}>
-                  <Button
-                    text={"취소"}
-                    main={"sub"}
-                    onClick={approveCancle}
-                    id={user?.userid}
-                    // fontsize={18}
-                  />
-                </div>
-              ) : (
-                <div className={styles.btn}>
-                  <Button
-                    text={"승인"}
-                    onClick={approve}
-                    id={user?.userid}
-                    // fontsize={18}
-                  />
-                </div>
-              )}
-            </td>
-            <td className={styles.btn}>
-              {user?.isAdmin === "true" ? (
+        </thead>
+        <tbody>
+          {currentList.length === 0 && (
+            <tr>
+              <td colSpan={5} className={styles.noUser}>
+                유저가 없습니다.
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          )}
+          {currentList.map((user) => (
+            <tr key={uuidv4()} className={styles.tr}>
+              <td className={styles.userid}>
+                <span className={styles.admin}>{isAdmin && "[업소]"}</span>
+                {user?.userid}
+              </td>
+              <td className={styles.nickname}>{user?.nickname}</td>
+              <td className={styles.phone}>
+                <a href={`tel:${user?.phone}`}>{user?.phone}</a>
+              </td>
+
+              <td className={styles.btn}>
                 <div className={styles.btn}>
                   <Button
                     text={"취소"}
@@ -148,30 +79,26 @@ export default function UserList({
                     // fontsize={18}
                   />
                 </div>
-              ) : isBlockUser ? (
-                <div className={styles.btn}>
-                  <Button
-                    text={"삭제"}
-                    main={"sub"}
-                    onClick={deleteUser}
-                    // fontsize={18}
-                    id={user?.userid}
-                  />
-                </div>
-              ) : (
-                <div className={styles.btn}>
-                  <Button
-                    text={"지정"}
-                    // fontsize={18}
-                    onClick={approveAdmin}
-                    id={user?.userid}
-                  />
-                </div>
-              )}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <ReactPaginate
+        breakLabel={""}
+        previousLabel={"<"}
+        nextLabel={">"}
+        onPageChange={handlePageClick}
+        pageCount={Math.ceil(totalCnt / 10)}
+        pageRangeDisplayed={10}
+        marginPagesDisplayed={10}
+        containerClassName={styles.pagination}
+        activeClassName={styles.current}
+        pageClassName={styles.item}
+        previousClassName={styles.prev}
+        nextClassName={styles.next}
+      />
+    </>
   );
 }

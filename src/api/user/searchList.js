@@ -44,7 +44,6 @@ export const noneApproveSearchList = async (
     )
       .then((data) => data.json())
       .then((userList) => {
-        console.log(userList);
         setUserSearchList(userList);
         setSearchTotalCnt(userList.length);
       })

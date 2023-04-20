@@ -1,12 +1,6 @@
-export const user_list = async (
-  setNoneApproveList,
-  setApproveList,
-  setAdminList,
-  setIsLoading
-) => {
+// 관리자만 불러오기
+export const user_list = async (setAdminList, setIsLoading, totalCnt) => {
   const formData = new FormData();
-  setNoneApproveList([]);
-  setApproveList([]);
   setAdminList([]);
   setIsLoading(true);
   setTimeout(() => {
@@ -16,15 +10,8 @@ export const user_list = async (
     })
       .then((data) => data.json())
       .then((userList) => {
-        for (const user of userList) {
-          if (user?.approve === "false") {
-            setNoneApproveList((prev) => [...prev, user]);
-          } else if (user?.approve === "true" && user?.isAdmin === "false") {
-            setApproveList((prev) => [...prev, user]);
-          } else if (user?.approve === "true" && user?.isAdmin === "true") {
-            setAdminList((prev) => [...prev, user]);
-          }
-        }
+        totalCnt(userList.length);
+        setAdminList(userList);
       })
       .then(() => setIsLoading(false));
   }, 500);

@@ -29,7 +29,6 @@ export default function SearchUser({
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    // console.log(search);
     setSearchBtn(true);
     switch (approve) {
       case "true":
@@ -43,8 +42,6 @@ export default function SearchUser({
 
         break;
       case "false":
-        //미승인유저 중에 검색
-        console.log(search);
         noneApproveSearchList(
           setUserSearchList,
           setSearchTotalCnt,
