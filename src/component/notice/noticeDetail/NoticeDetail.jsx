@@ -43,12 +43,9 @@ export default function NoticeDetail({ isAdmin }) {
             <td className={styles.tdDate}>{date}</td>
           </tr>
           <tr className={styles.desc}>
-            <td colSpan={4} className={styles.description}>
+            <td colSpan={3} className={styles.description}>
               {parse(content)}
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
           </tr>
         </tbody>
       </table>

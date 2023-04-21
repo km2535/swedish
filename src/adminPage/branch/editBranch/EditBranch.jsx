@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid } from "uuid";
 import styles from "./EditBranch.module.css";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { FaPlusSquare } from "react-icons/fa";
@@ -30,7 +30,7 @@ export default function EditBranch({ branchState }) {
   const [previewImg, setPreviewImg] = useState([]);
   useEffect(() => {
     if (branchState === undefined) {
-      const ID = uuidv4();
+      const ID = uuid();
       setBoard((prev) => ({ ...prev, ID: ID, WRITER: "관리자" }));
     } else {
       setBoard((prev) => ({
@@ -67,41 +67,28 @@ export default function EditBranch({ branchState }) {
   }, [previewImg, previewImg.length]);
 
   const changeHandler = (e) => {
-    const { id, value, files } = e.target;
+    const { id, files } = e.target;
+    let maxSize = 0.8 * 1024 * 1024;
     if (id === "files") {
       for (let i = 0; i < files.length; i++) {
         if (files[i].type.includes("image")) {
-          setFileUrl(`${files[i]?.name}`);
-          const uuid = uuidv4();
-          setPreviewFile(() => [
-            {
-              url: URL.createObjectURL(files[i]),
-              name: files[i].name,
-              uuid: uuid,
-              lastModified: files[i].lastModified,
-            },
-          ]);
-          setFile(files[i]);
+          if (!(files[i].size > maxSize)) {
+            setFileUrl(`${files[i]?.name}`);
+
+            setPreviewFile(() => [
+              {
+                url: URL.createObjectURL(files[i]),
+                name: files[i].name,
+                uuid: uuid(),
+                lastModified: files[i].lastModified,
+              },
+            ]);
+            setFile(files[i]);
+          } else {
+            window.alert("사진은 800kb 이하만 허용됩니다.");
+          }
         }
       }
-    } else if (id === "images") {
-      for (let i = 0; i < files.length; i++) {
-        if (files[i].type.includes("image")) {
-          setImgUrl(`${files[i]?.name}`);
-          const uuid = uuidv4();
-          setPreviewImg(() => [
-            {
-              url: URL.createObjectURL(files[i]),
-              name: files[i].name,
-              uuid: uuid,
-              lastModified: files[i].lastModified,
-            },
-          ]);
-          setImgFiles(files[i]);
-        }
-      }
-    } else {
-      setBoard((product) => ({ ...product, [id]: value }));
     }
   };
 

@@ -95,6 +95,8 @@
   margin-top: 50px;
 }
 .pwFind,.idFind{
+  width: 50%;
+  text-align: center;
   font-family: var(--main-kr-font);
   font-style: normal;
   font-weight: 700;

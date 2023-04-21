@@ -175,5 +175,20 @@
   .admin{
   font-size: 10px;
   margin: 2px;
+  word-break: break-all;
  }
+ .writer{
+    width: auto;
+    margin-right: 5px;
+  }
+  .date{
+    width: auto;
+  }
+  .btns{
+    width: auto;
+    display: flex;
+  }
+ .editBtn,.remove{
+    margin: 0 2px 0 2px;
+  }
 }

@@ -58,6 +58,9 @@ export default function AddManager() {
       case "worktime":
         setBoard((prev) => ({ ...prev, [id]: e.target.value }));
         break;
+      case "comment":
+        setBoard((prev) => ({ ...prev, [id]: e.target.value }));
+        break;
       default:
         break;
     }
@@ -68,20 +71,25 @@ export default function AddManager() {
 
   const changeHandler = (e) => {
     const { id, files } = e.target;
+    let maxSize = 0.8 * 1024 * 1024;
     if (id === "files") {
       for (let i = 0; i < files.length; i++) {
         if (files[i].type.includes("image")) {
-          setFileUrl(`${files[i]?.name}`);
+          if (!(files[i].size > maxSize)) {
+            setFileUrl(`${files[i]?.name}`);
 
-          setPreviewFile(() => [
-            {
-              url: URL.createObjectURL(files[i]),
-              name: files[i].name,
-              uuid: uuid(),
-              lastModified: files[i].lastModified,
-            },
-          ]);
-          setFile(files[i]);
+            setPreviewFile(() => [
+              {
+                url: URL.createObjectURL(files[i]),
+                name: files[i].name,
+                uuid: uuid(),
+                lastModified: files[i].lastModified,
+              },
+            ]);
+            setFile(files[i]);
+          } else {
+            window.alert("썸네일 사진은 800kb 이하만 허용됩니다.");
+          }
         }
       }
     }

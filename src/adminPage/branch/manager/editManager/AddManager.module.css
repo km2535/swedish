@@ -103,7 +103,12 @@
   margin: 0 auto;
  }
  .imgbox{
-  top: 292px;
+  position: relative;
+  top: 0px;
+}
+.plusBtn{
+  position: relative;
+  top: -400px;
  }
 }
 @media screen and (max-width:768px){
@@ -131,4 +136,7 @@
   .submitBtn{
     width: 100px;
   }
+  .plusBtn{
+  top: -300px;
+ }
 }

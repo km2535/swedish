@@ -39,7 +39,6 @@ export default function Admin() {
               지점관리
             </li>
             <ul className={styles.subUl}>
-              {isLoading && <></>}
               {branchList.map((branch) => (
                 <li
                   className={styles.subLi}
@@ -55,14 +54,16 @@ export default function Admin() {
             <li className={styles.li} onClick={() => navigate("/admin/notice")}>
               공지사항
             </li>
-            <div className={styles.arrow}>
-              <BsFillTriangleFill />
-            </div>
           </ul>
         </div>
         <div className={styles.mbUl}>
           <ul className={styles.mbsubUl}>
             {isLoading && <></>}
+            {branchList.length > 0 && (
+              <div className={styles.arrow}>
+                <BsFillTriangleFill />
+              </div>
+            )}
             {branchList.map((branch) => (
               <li
                 className={styles.subLi}

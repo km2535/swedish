@@ -177,8 +177,26 @@
  }
 }
 @media screen and (max-width:768px){
+  .userWrapper{
+    width: 100%;
+  }
+  .writer{
+    width: auto;
+    margin-right: 5px;
+  }
+  .date{
+    width: auto;
+  }
+  .btns{
+    width: auto;
+    display: flex;
+  }
+  .editBtn,.remove{
+    margin: 0 2px 0 2px;
+  }
  .admin{
   font-size: 12px;
   margin: 2px;
+  word-break: break-all;
  }
 }

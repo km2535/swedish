@@ -112,7 +112,7 @@
     position: absolute;
     color: var(--main-color);
     top: 125px;
-    left: 55%;
+    left: 64%;
     font-size: 30px;
   }
   .contents{
@@ -125,5 +125,8 @@
   }
   .subLi{
     width: 50%;
+  }
+  .arrow{
+    left: 66%;
   }
 }

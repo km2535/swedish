@@ -34,7 +34,6 @@ export default function DesignSkin() {
           window.alert("그림(.jpg) 파일만 업로드해주세요");
         }
       }
-      console.log(files);
       const newFile = new File(files, `bg.jpg`);
       setFile(newFile);
     }
