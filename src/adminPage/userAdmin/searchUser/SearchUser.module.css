@@ -54,6 +54,7 @@
   }
   .searchBtn,.resetBtn{
     width: 100px;
+    height: 36px;
     margin-top: 10px;
     margin-bottom: 10px;
   }

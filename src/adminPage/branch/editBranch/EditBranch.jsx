@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import styles from "./EditBranch.module.css";
-import { AiOutlineCloseSquare } from "react-icons/ai";
+// import { AiOutlineCloseSquare } from "react-icons/ai";
 import { FaPlusSquare } from "react-icons/fa";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -45,6 +45,7 @@ export default function EditBranch({ branchState }) {
       }));
     }
   }, [branchState]);
+
   useEffect(() => {
     setBoard((prev) => ({ ...prev, THUMB_URL: fileUrl }));
   }, [fileUrl]);
@@ -67,14 +68,13 @@ export default function EditBranch({ branchState }) {
   }, [previewImg, previewImg.length]);
 
   const changeHandler = (e) => {
-    const { id, files } = e.target;
+    const { id, files, value } = e.target;
     let maxSize = 0.8 * 1024 * 1024;
     if (id === "files") {
       for (let i = 0; i < files.length; i++) {
         if (files[i].type.includes("image")) {
           if (!(files[i].size > maxSize)) {
             setFileUrl(`${files[i]?.name}`);
-
             setPreviewFile(() => [
               {
                 url: URL.createObjectURL(files[i]),
@@ -90,22 +90,43 @@ export default function EditBranch({ branchState }) {
         }
       }
     }
+    if (id === "images") {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].type.includes("image")) {
+          if (!(files[i].size > maxSize)) {
+            setImgUrl(`${files[i]?.name}`);
+            setPreviewImg(() => [
+              {
+                url: URL.createObjectURL(files[i]),
+                name: files[i].name,
+                uuid: uuid(),
+                lastModified: files[i].lastModified,
+              },
+            ]);
+            setImgFiles(files[i]);
+          } else {
+            window.alert("사진은 800kb 이하만 허용됩니다.");
+          }
+        }
+      }
+    }
+    setBoard((prev) => ({ ...prev, [id]: value }));
   };
 
-  const removeFile = (e) => {
-    const { id } = e.target;
-    setFile("");
-    setPreviewFile((prev) =>
-      [...prev].filter((v) => v.lastModified !== Number(id))
-    );
-  };
-  const removeImg = (e) => {
-    const { id } = e.target;
-    setImgFiles("");
-    setPreviewImg((prev) =>
-      [...prev].filter((v) => v.lastModified !== Number(id))
-    );
-  };
+  // const removeFile = (e) => {
+  //   const { id } = e.target;
+  //   setFile("");
+  //   setPreviewFile((prev) =>
+  //     [...prev].filter((v) => v.lastModified !== Number(id))
+  //   );
+  // };
+  // const removeImg = (e) => {
+  //   const { id } = e.target;
+  //   setImgFiles("");
+  //   setPreviewImg((prev) =>
+  //     [...prev].filter((v) => v.lastModified !== Number(id))
+  //   );
+  // };
 
   const deleteBranchHandler = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
@@ -131,7 +152,7 @@ export default function EditBranch({ branchState }) {
       alert("지점이 수정되었습니다.");
     }
   };
-  // console.log(board);
+  console.log(previewImg);
   return (
     <form onSubmit={boardSubmit} id="formdata" className={styles.form}>
       <div className={styles.container}>
@@ -164,11 +185,11 @@ export default function EditBranch({ branchState }) {
               {previewFile.map((v) => (
                 <div key={v.uuid} className={styles.imgContent}>
                   <img src={v?.url} alt="" className={styles.img} />
-                  <AiOutlineCloseSquare
+                  {/* <AiOutlineCloseSquare
                     className={styles.removeIcon}
                     id={v.lastModified}
                     onClick={removeFile}
-                  />
+                  /> */}
                 </div>
               ))}
               {previewFile.length === 0 && branchState ? (
@@ -206,14 +227,14 @@ export default function EditBranch({ branchState }) {
               {previewImg.map((v) => (
                 <div key={v.uuid} className={styles.imgContent}>
                   <img src={v?.url} alt="" className={styles.img} />
-                  <AiOutlineCloseSquare
+                  {/* <AiOutlineCloseSquare
                     className={styles.removeIcon}
                     id={v.lastModified}
                     onClick={removeImg}
-                  />
+                  /> */}
                 </div>
               ))}
-              {previewFile.length === 0 && branchState ? (
+              {previewImg.length === 0 && branchState ? (
                 <div key={branchState.ID} className={styles.imgContent}>
                   <img
                     src={`${process.env.REACT_APP_API_DATA_URL}/branch/images/${branchState.ID}/${branchState?.MAPIMAGE_URL}`}

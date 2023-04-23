@@ -133,10 +133,12 @@
   }
   .btnContainer{
     padding: 10px 0;
+    justify-content: space-around;
   }
   .btn{
-    width: 150px;
-    height: 40px;
+    width: 100px;
+    height: 36px;
+    margin: 0;
   }
   .uploadContainer{
     height: 200px;

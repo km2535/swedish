@@ -92,4 +92,8 @@
   .default,.manager{
   width: 180px;
  }
+ .addBtn{
+  width: 130px;
+  height: 36px;
+ }
 }

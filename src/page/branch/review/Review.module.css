@@ -40,7 +40,8 @@
 }
 @media screen and (max-width : 768px){
     .btn{
-    width: 120px;
+    width: 100px;
+    height: 36px;
   }
   
 }

@@ -83,7 +83,7 @@ export default function SearchUser({
         </div>
       </div>
       <div className={styles.searchBtn}>
-        <Button main={"sub"} text={"검색"} type={"submit"} />
+        <Button text={"검색"} type={"submit"} />
       </div>
       <div className={styles.resetBtn}>
         <Button main={"sub"} onClick={reset} text={"초기화"} type={"button"} />
