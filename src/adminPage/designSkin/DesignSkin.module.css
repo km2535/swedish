@@ -58,8 +58,13 @@
   display: flex;
   margin-bottom: 30px;
 }
+.btn{
+  display: flex;
+  justify-content: flex-end;
+}
 .submitBtn{
-  width: 100%;
+  width: 140px;
+  height: 36px;
 }
 
 @media screen and (max-width:1350px){
@@ -107,5 +112,8 @@
     width: 90%;
     top: 350px;
     height: 300px;
+  }
+  .submitBtn{
+    width: 100px;
   }
 }

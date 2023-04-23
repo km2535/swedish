@@ -27,6 +27,7 @@
 .content{
   display: flex;
   white-space: pre-wrap;
+  font-family: var(--main-kr-font);
 }
 
 .editcontainer{

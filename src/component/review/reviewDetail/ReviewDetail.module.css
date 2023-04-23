@@ -35,6 +35,8 @@
 }
 .description{
   text-align: justify;
+  font-family: var(--main-kr-font);
+  padding: 20px;
 }
 .moreBtnWrapper{
   display: flex;

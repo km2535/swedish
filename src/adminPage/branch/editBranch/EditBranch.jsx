@@ -152,7 +152,6 @@ export default function EditBranch({ branchState }) {
       alert("지점이 수정되었습니다.");
     }
   };
-  console.log(previewImg);
   return (
     <form onSubmit={boardSubmit} id="formdata" className={styles.form}>
       <div className={styles.container}>
